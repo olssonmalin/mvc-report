@@ -1,0 +1,52 @@
+{% apply markdown_to_html %}
+    ## Kmom01
+
+    
+
+    **Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.**
+
+    Mina tidigare kunskaper om objektorientering är begränasde till kursen OOPython från förra läsperioden.
+    Då tyckte jag att det var kul ämne och känner att jag har hyfsat god förståelse för objektorientering i sin helhet.
+    Det ska bli kul att använda det i PHP också. 
+
+    **Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser?**
+
+    För att skapa sina första klasser behöver man främst veta syntaxen för att skriva en klass. Här är ett exempel hämtat från guiden komigång med objekt orientering i PHP från dbwebb.se:
+
+<pre><code>
+class Person1
+{
+    public $name;
+    public $age;
+
+    public function details() {
+        return "My name is {$this->name} and I am {$this->age} years old.";
+    }
+}
+</pre></code>
+
+
+Men vet man inte vad en klass innebär så kan det vara bäst att börja med att förstå det. En klass används som mall för att kunna instansiera objekt.
+Ett objekt kan vara många olika saker men enklast är att se det just som ett objekt som t.ex en boll. Precis som en boll kan objekt ha olika egenskaper. En boll kan vara av gummi och röd.
+En boll kanske också kan studsa. Detta skulle kunna vara en metod i boll-klassen.
+
+Vad som är specifikt för PHPs modell för klasser och objekt förutom syntaxen till skillnad från klasser och objekt i python känner jag att jag inte riktigt har helt koll på än. Det som jag lärde mig var främst när det kommer till publika och privata attribut. 
+I python lyfts inga error om ett program försöker ändra på ett privat attribut det används tillskillnad från i PHP där programmet krashar. 
+
+**Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?**
+
+Jag tycker det var smidigt att man kunde sätta upp en "färdig" kodbas med symfony. Jag har ingen speciell uppfattning av den. Det är svårt att förstå vad exakt alla delar gör och vad de fyller för funktion för sidan. De delar jag har jobbat med i denna uppgift har varit templates med twig, css som jag la till i public
+ samt src/Controller där jag har jobbat i Report.php för att bygga upp mina routes till de olika delarna. Routsen var smidiga att bygga och sedan rendera en twig-template. Det jag hade lite svårt med var att få det att funka på studentservern. Det problemet jag hade var att mina länkar gick fel i navbaren. 
+ Jag insåg att jag behöve namnge routerna och använda path() i länken.
+
+**Med tanke på artikeln “PHP The Right Way”, vilka delar in den finner du extra intressanta och värdefulla? Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.**
+
+Jag tror att avsnittet language highlights med delen namespacing kommer vara hjälpsamt för att förstå just namespacing, det är ett begrepp jag inte känner mig helt bekväm vid just nu men ser fram emot att lära mig mer om. 
+Eftersom vi kommer ta upp testning senare i kursen tror jag att den delen också kan vara intressant. 
+
+**Vilken är din TIL för detta kmom?**
+
+Det har varit mycket att ta in nu i början så min TIL för detta kmom är att ta en sak i taget. 
+Denna vecka har jag främst fokuserat på att ställa om till att programmera i PHP som jag inte har gjort på detta sätt sedan webtec-kursen. 
+
+{% endapply %}
