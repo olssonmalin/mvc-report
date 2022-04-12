@@ -32,6 +32,11 @@ class Deck
         }
     }
     
+    /**
+     * Gets card deck
+     *
+     * @return array
+     */
     public function getDeck(): array
     {
         return $this->deck;
