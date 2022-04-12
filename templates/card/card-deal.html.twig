@@ -1,0 +1,39 @@
+{% include 'header.html.twig' %}
+    <main>
+    <h1> {{ title }} </h1>
+{% include 'block/flash-message.html.twig' %}
+
+    {% for player in game %}
+    <div class="player">
+    <div class="deck-div">
+    {% for card in player %}
+
+        <div class="card
+        {% if card["suit"] == "&hearts;" or card["suit"] == "&diams;" %}
+             red
+        {% else %}
+            black
+        {% endif %}
+        "
+        >
+        <p class="symbol-top">{{ card["suit"]|raw }}</p>
+        <p class="symbol-center">
+            {{ card["value"]|raw }}
+        </p>
+        <p class="symbol-bottom">{{ card["suit"]|raw }}</p>
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+    {% endfor %}
+
+    {# <pre>{{ dump(game) }}</pre> #}
+
+    <p>Antal kort kvar: {{ length }}</p>
+    
+    <div class="column"><a href="{{ path('reset') }}">Återställ antal</a></div>
+    {# <div class="column"><a href="{{ path('draw') }}">Nytt kort</a></div> #}
+
+    </main>
+
+{% include 'footer.html.twig' %}

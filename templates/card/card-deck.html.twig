@@ -1,0 +1,32 @@
+{% include 'header.html.twig' %}
+    <main>
+    <h1> {{ title }} </h1>
+
+    <div class="deck-div">
+    {% for card in deck %}
+        <div class="card
+        {% if card["suit"] == "&hearts;" or card["suit"] == "&diams;" %}
+             red
+        {% else %}
+            black
+        {% endif %}
+        "
+        >
+        <p class="symbol-top">{{ card["suit"]|raw }}</p>
+        <p class="symbol-center
+        {% if card["value"] == "JOKER" %}
+        joker">
+        {% else %}
+        ">
+        {% endif %}
+            {{ card["value"]|raw }}
+        </p>
+        <p class="symbol-bottom">{{ card["suit"]|raw }}</p>
+        </div>
+    {% endfor %}
+
+    </div>
+
+    </main>
+
+{% include 'footer.html.twig' %}

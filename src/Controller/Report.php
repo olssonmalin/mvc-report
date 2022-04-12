@@ -26,9 +26,8 @@ class Report extends AbstractController
     public function welcome(): Response
     {
         $title = 'Välkommen!';
-
         return $this->render('home.html.twig', [
-            'title' => $title
+            'title' => $title,
         ]);
     }
 

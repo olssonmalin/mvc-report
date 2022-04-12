@@ -1,0 +1,17 @@
+{% include 'header.html.twig' %}
+    <main>
+    <h1> {{ title }} </h1>
+
+    <div class="row">
+            <div class="column"><a href="{{ path('deck') }}">Deck</a></div>
+            <div class="column"><a href="{{ path('deck2') }}">Deck2</a></div>
+            <div class="column"><a href="{{ path('shuffle') }}">Shuffle</a></div>
+            <div class="column"><a href="{{ path('form-deal') }}">Deal</a></div>
+            <div class="column"><a href="{{ path('card-api-deck') }}">Deck Api</a></div>
+
+            {% include 'form/draw.html.twig' %}
+        </div>
+
+    </main>
+
+{% include 'footer.html.twig' %}

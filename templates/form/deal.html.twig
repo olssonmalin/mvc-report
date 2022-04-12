@@ -1,0 +1,25 @@
+{% include 'header.html.twig' %}
+    <main>
+    <h1> {{ title }} </h1>
+{% include 'block/flash-message.html.twig' %}
+
+<form method="post">
+    <fieldset>
+    <legend>Deal form</legend>
+    <p>
+        <label>Number of players:
+            <input type="number" name="players" value="">
+        </label>
+    </p>
+    <p>
+        <label>Number of cards:
+            <input type="number" name="cards" value="">
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="deal">
+    </p>
+    </fieldset>
+</form>
+
+{% include 'footer.html.twig' %}
