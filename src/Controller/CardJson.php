@@ -36,4 +36,25 @@ class CardJson extends AbstractController
 
         return $response;
     }
+
+     /**
+     * @Route("/card/api/deck/shuffle", name="shuffle-api")
+     */
+    public function deckShuffleApi(SessionInterface $session): Response
+    {   
+        $this->deck = new Deck();
+        $this->deck->shuffle();
+        $session->set("deck", $this->deck);
+        $deck = $session->get("deck");
+
+        $data = [
+            'deck' => $deck->toString()
+        ];
+
+        $response = new Response();
+        $response->setContent(json_encode($data));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
+    }
 }
