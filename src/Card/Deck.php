@@ -81,6 +81,12 @@ class Deck
         return $this->lastDrawn;
     }
 
+    /**
+     * Draws given number of cards from deck
+     *
+     * @param integer $num
+     * @return void
+     */
     public function draw(int $num = 1)
     {
         $deckPart = [];
