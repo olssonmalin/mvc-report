@@ -1,4 +1,34 @@
 {% apply markdown_to_html %}
     ## Kmom02
 
+**Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP**
+
+*Arv* används för att kunna utväckla en klass. Klassen ärver då metoder och properties från en bas/förelderklass. 
+Dessa metoder kan överlagras för att passa ett mer specifit objekt som barnklassen instansierar. Metoder och properties kan även läggas till i barnklassen.
+
+*Komposition* är en typ av relationsförhållande mellan klasser. Det betyder att en klass använder sig av en annan klass. T.ex skulle en klass för ett hus instansiera klasser för rum. 
+Huset innehåller rum och rummen kan inte finnas utan huset. 
+
+*Interface* är en typ av basklass som inte instansieras utan implementeras av subklasser. 
+Interfacet är en sort mall över vad klassen som implementerar den ska ha för metoder och properties.
+
+*Trait* är en del av en klass som kan implementeras av olika klasser. 
+Traits används i PHP då klasser i PHP inte kan ha multipelt arv. Har vi då en basklass som ärvs av olika subklasser där vissa av subklasserna ska ha samma implementation och andra inte kan vi skapa ett trait för detta som subklasser kan använda för att slippa skriva denna kod flera gånger.  
+
+**Berätta om din implementation från uppgiften. Hur löste du
+uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i
+din koden och dina klasser?**
+
+Jag löste uppgiften genom att först skapa klasser för card och deck. Deck och card har kompositionsförhållande till varandra då card-klassen inte instansieras av sig själv utan finns bara i deckklassen. 
+Jag valde att inte göra ett interface för Deck då jag inte såg nyttan med det för denna uppgift. Hade vi haft en sida för en helt annan sort kortlek t.ex en tarotkortlek eller liknande hade denna varit rimligt.
+Deck har metoder för att plocka kort, blanda kortleken och hämta kortleken som en array med kortobjekt eller som en array med kortens värde och färg. Beroende på vilken route som används använder jag kortleken jag har sparat i session eller inte. För draw, deal och shuffle hämtar jag kortleken i session för att kunna ta bort kort som plockas ut ur leken. 
+
+
+**Berätta hur det kändes att modellera ett kortspel med
+flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en
+applikation?**
+
+
+**Vilken är din TIL för detta kmom?**
+
 {% endapply %}
