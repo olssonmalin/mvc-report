@@ -6,8 +6,14 @@ namespace App\Card;
  * Showing off a standard class with methods and properties.
  */
 class Deck
-{
+{   
+    /**
+     * Array holding card objects
+     *
+     * @var array
+     */
     protected $deck = [];
+
     private $suits = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
     private $lastDrawn = [];
 

@@ -3,13 +3,14 @@
 
 **Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP**
 
-*Arv* används för att kunna utväckla en klass. Klassen ärver då metoder och properties från en bas/förelderklass. 
+*Arv* används för att kunna utväckla en klass. Klassen ärver då metoder och properties från en bas/förälderklass. 
 Dessa metoder kan överlagras för att passa ett mer specifit objekt som barnklassen instansierar. Metoder och properties kan även läggas till i barnklassen.
+Basklassen har alltså en grund som är gemensamm som subklasser kan ärva.
 
 *Komposition* är en typ av relationsförhållande mellan klasser. Det betyder att en klass använder sig av en annan klass. T.ex skulle en klass för ett hus instansiera klasser för rum. 
-Huset innehåller rum och rummen kan inte finnas utan huset. 
+Huset innehåller rum och rummen kan inte finnas utan huset.
 
-*Interface* är en typ av basklass som inte instansieras utan implementeras av subklasser. 
+*Interface* är en typ av basklass som inte instansierar objekt i sig. Den implementeras av subklasser. 
 Interfacet är en sort mall över vad klassen som implementerar den ska ha för metoder och properties.
 
 *Trait* är en del av en klass som kan implementeras av olika klasser. 
