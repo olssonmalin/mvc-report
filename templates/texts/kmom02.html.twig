@@ -20,9 +20,13 @@ uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i
 din koden och dina klasser?**
 
 Jag löste uppgiften genom att först skapa klasser för card och deck. Deck och card har kompositionsförhållande till varandra då card-klassen inte instansieras av sig själv utan finns bara i deckklassen. 
-Jag valde att inte göra ett interface för Deck då jag inte såg nyttan med det för denna uppgift. Hade vi haft en sida för en helt annan sort kortlek t.ex en tarotkortlek eller liknande hade denna varit rimligt.
+Jag valde att inte göra ett interface för Deck då jag inte såg nyttan med det för denna uppgift. 
+Jag gjorde istället en huvudsklig deck-klass som används för kortleken utan jokrar som deck2 (kortlek med jokrar) ärver ifrån. För att kunna lägga till kort i deck2 fick jag ändra propertien deck till protected för att den fortfarande inte skulle nås utanför klassen men kunna nås i subklassen.
 Deck har metoder för att plocka kort, blanda kortleken och hämta kortleken som en array med kortobjekt eller som en array med kortens värde och färg. Beroende på vilken route som används använder jag kortleken jag har sparat i session eller inte. För draw, deal och shuffle hämtar jag kortleken i session för att kunna ta bort kort som plockas ut ur leken. 
 
+Jag skapade även ett eget exception (DeckTooSmall) som kastas när användaren försöker plocka ett antal kort som är mer än vad som finns kvar i kortleken. Exceptionet fångas sedan i controllerna som skriver ut ett flash-meddelande om att det är för få kort i kortleken.
+Jag tycker min skulle kunna vara mer dry men eftersom det är första gången jag programmerar med klasser i PHP och använder symfony känne rjag mig nöjd. Jag förstår min kod bra. 
+En sak jag kände mig lite osäker på var när jag ska plocka ut detaljer från korten som värde och färg. Jag använder mig mycket av en metod jag implemeterade i Deck-klassen som returnerar en array av arrayer där kortens värde och färg ligger. Nu i efterhand hade jag nog gjort det senare i koden för att jobba mer med objekten i sig och inte lika mycket med arrayer. 
 
 **Berätta hur det kändes att modellera ett kortspel med
 flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en
@@ -31,5 +35,7 @@ applikation?**
 Eftersom denna del flyttades till kmom03 har jag inte gjort det detta kmom.
 
 **Vilken är din TIL för detta kmom?**
+
+Min TIL för detta kmom är hur jag använder egenskrivna klasser i PHP tillsammans med symfony. Jag har även försökt fokusera lite på min katalogstruktur genom att dela upp min templates i olika delar vilket har funkat bra. 
 
 {% endapply %}
