@@ -9,11 +9,26 @@ use App\Card\Card;
  */
 class Card
 {   
-
+    /**
+     * Holds cards suit
+     *
+     * @var string
+     */
     private $suit;
 
+    /**
+     * Holds cards value
+     *
+     * @var integer
+     */
     private int $value;
 
+    /**
+     * Creates card, sets value and suit
+     *
+     * @param string $suit
+     * @param integer $value
+     */
     public function __construct(string $suit = "joker", int $value) {
         $this->value = $value;
         $this->suit = $suit;
@@ -29,6 +44,11 @@ class Card
         return $this->value;
     }
 
+    /**
+     * Get cards suit
+     *
+     * @return void
+     */
     public function getSuit()
     {
         return $this->suit;
