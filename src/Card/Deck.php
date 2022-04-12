@@ -42,6 +42,11 @@ class Deck
         return $this->deck;
     }
 
+    /**
+     * To get cards values and suits in array
+     *
+     * @return array
+     */
     public function toString(): array
     {   
         $deck = [];
