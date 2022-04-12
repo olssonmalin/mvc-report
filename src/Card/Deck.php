@@ -56,11 +56,21 @@ class Deck
         return $deck;
     }
 
+    /**
+     * Shuffles deck
+     *
+     * @return void
+     */
     public function shuffle(): void
     {
         shuffle($this->deck);
     }
 
+    /**
+     * Gets number of cards in deck
+     *
+     * @return integer
+     */
     public function getLen(): int
     {
         return count($this->deck);
