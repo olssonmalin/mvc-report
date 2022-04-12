@@ -14,6 +14,11 @@ class Deck
      */
     protected $deck = [];
 
+    /**
+     * array holding suits for deck
+     *
+     * @var array
+     */
     private $suits = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
     private $lastDrawn = [];
 
