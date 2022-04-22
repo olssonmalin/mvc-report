@@ -71,8 +71,7 @@ class Card
             return "K";
         } elseif ($this->value === 14) {
             return "A";
-        } else {
-            return "$this->value";
-        }
+        } 
+        return "$this->value";
     }
 }

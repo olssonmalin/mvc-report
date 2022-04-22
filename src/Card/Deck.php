@@ -24,9 +24,9 @@ class Deck
 
     public function __construct()
     {
-        foreach ($this->suits as &$s) {
+        foreach ($this->suits as &$suit) {
             for($i = 2; $i <= 14; $i++) {
-                $card = new Card($s, $i);
+                $card = new Card($suit, $i);
                 array_push($this->deck, $card);
             }
         }
