@@ -22,11 +22,11 @@ class Deck
     private $suits = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
     private $lastDrawn = [];
 
-    public function __construct()
+    public function __construct($card)
     {
         foreach ($this->suits as &$suit) {
             for($i = 2; $i <= 14; $i++) {
-                $card = new Card($suit, $i);
+                $card = new $card($suit, $i);
                 array_push($this->deck, $card);
             }
         }

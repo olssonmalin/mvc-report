@@ -57,7 +57,7 @@ class Draw extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function drawProcess(Request $request, SessionInterface $session): Response
+    public function drawProcess(Request $request): Response
     {
         $number  = $request->request->get('number');
 

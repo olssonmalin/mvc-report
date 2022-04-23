@@ -47,7 +47,7 @@ class Card
     /**
      * Get cards suit
      *
-     * @return void
+     * @return string
      */
     public function getSuit()
     {

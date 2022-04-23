@@ -10,9 +10,9 @@ use App\Card\Card;
 class Deck2 extends Deck
 {
 
-    public function __construct()
+    public function __construct($card)
     {
-        parent::__construct();
+        parent::__construct($card);
         for ($i = 0; $i < 2; $i++) {
             $card = new Card("&#9734;", 0);
             array_push($this->deck, $card);

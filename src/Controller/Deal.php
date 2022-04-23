@@ -14,7 +14,7 @@ use App\Card\Player;
 use App\Card\DeckTooSmallException;
 
 class Deal extends AbstractController {
-    
+
      /**
      * @Route("/card/deck/deal/{players}/{cards}", 
      * name="deal", 
@@ -23,7 +23,7 @@ class Deal extends AbstractController {
     public function deckDeal(int $players, int $cards, SessionInterface $session): Response
     {
         $title = 'Deal';
-        $session->set("deck", $session->get("deck") ?? new Deck());
+        $session->set("deck", $session->get("deck") ?? new Deck(Card::class));
         $session->set("game", $session->get("game") ?? []);
         $deck = $session->get("deck");
         $game = $session->get("game");
