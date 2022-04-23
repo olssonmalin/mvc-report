@@ -21,16 +21,6 @@ class Draw extends AbstractController
      */
     public function deckDraw(SessionInterface $session): Response
     {
-        // $title = 'Draw';
-        // $session->set("deck", $session->get("deck") ?? new Deck());
-        // $deck = $session->get("deck");
-        // $deck->shuffle();
-
-        // return $this->render('card/card-draw.html.twig', [
-        //     'title' => $title,
-        //     'deck' => $deck->draw(),
-        //     'length' => $deck->getLen()
-        // ]);
         
         return $this->deckDrawNumber(1, $session);
     }
