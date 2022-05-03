@@ -4,10 +4,10 @@ namespace App\Card;
 
 class Game
 {   
-    private $player;
-    private $bank;
-    private $deck;
-    private $currentPlayer;
+    private Player $player;
+    private Player $bank;
+    private Deck $deck;
+    private Player $currentPlayer;
 
     public function __construct($deck, $player, $card)
     {
@@ -17,14 +17,14 @@ class Game
         $this->currentPlayer = $this->player;
     }
 
-    public function hit()
+    public function hit(): void
     {   
         $this->deck->shuffle();
         $card = $this->deck->draw();
         $this->currentPlayer->addCard($card);
     }
 
-    public function stand()
+    public function stand(): void
     {
         if ($this->currentPlayer !== $this->bank) {
             $this->currentPlayer = $this->bank;
@@ -32,7 +32,7 @@ class Game
         }
     }
 
-    public function playBank()
+    public function playBank(): void
     {
         while ($this->bank->getScore() < 17) {
             $this->hit();
@@ -45,12 +45,12 @@ class Game
         
     }
 
-    public function getPlayer()
+    public function getPlayer(): Player
     {
         return $this->player;
     }
 
-    public function getBank()
+    public function getBank(): Player
     {
         return $this->bank;
     }
