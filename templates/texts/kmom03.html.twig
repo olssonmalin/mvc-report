@@ -1,4 +1,27 @@
 {% apply markdown_to_html %}
     ## Kmom03
-    
+
+
+**Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?**
+
+Jag tyckte först att det kändes som rätt mycket att göra och hade väldigt svårt att komma igång och börja. Men sedan började jag med att skriva klass diagrammen. För mig kändes det som en rmlig start för att få en bild av uppglägget jag skulle ha på mina klasser. 
+Detta var något vi gjorde i projektet för OOPython-kursen och då kände jag att det var ett bra sätt att komma igång på så jag gjorde det även för denna uppgift.
+jag gikc vidare med att skriva pseudo-koden. Det kände jag var lite svårt i början för att jag inte riktigt visste hur mycket flödande text det skulle vara och inte.
+Jag valde att gå någon mellanväg där själva skalet för classerna med metoder finns för att sedan skriva mer pseudokod i metoderna. 
+Flödesdiagrammet kändes som en bra koll för att se att jag får med mig det jag behöver i min pseudokod. Både pseudokoden och klassdiagrammet gjorde det främst lättare för mig att börja med uppgiften. Då hade jag som en mall att följa och som hjälpte mig att komma in i tänket kring uppgiften mer. 
+
+**Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden, dina klasser och applikationen som helhet?**
+
+Jag är rätt så nöjd med mina klasser och flödet. Jag är missnöjd med hur själva spelet ser ut. Jag tycker att det hade kunnat vara lite snyggare men det kunde jag inte lägga tid på denna gång. 
+På vissa ställen i min kod kan jag känna att jag kanske krånglar till det lite som att jag har en metod som heter playBank i min klass för Game. Jag var osäker på hur "generellt" jag skulle skriva den koden. Om jag skulle skriva den för att passa till flera spel eller just detta spel. Tillslut kom jag fram till att det rimligaste är att den klassen representerar just detta spel men att spelaren, kortleken och korten skulle kunna användas till andra spel. 
+Därför gjorde jag metoden playBank och playerWon som är enbart för detta spel. För att ha bättre cohesion också ville jag inte lägga dessa metoder i t.ex player-klassen, då skulle spelaren få ett annat ansvar än att bara just vara en spelare som har en kort-hand. 
+
+**Vilken är din känsla för att koda i ett ramverk som Symfony, så här långt in i kursen?**
+
+Jag känner mig ny på det fortfarande men att jag kommer in i det mer och mer. Jag tycker systemet med routrar är tydligt och har man använder det samt har jag kan dela upp min kod i flera klasser för att inte ha allt i samma klass. Detta gjorde jag för kmom02-koden innan jag började med denna uppgift.
+
+**Vilken är din TIL för detta kmom?**
+
+Mitt TIL detta kmom är hur jag kan jobba med att dokumentera för att lösa problem. Jag har också lärt mig mer om hur jag skriver snyggare och bättre kod genom att ha cohesion, coupling och Cyclomatic complexity i åtankte när jag skriver min kod. 
+
 {% endapply %}
