@@ -77,3 +77,13 @@ body {
 .joker {
     font-size: 10px;
 }
+
+.game-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.player-div {
+    min-height: 300px;
+}

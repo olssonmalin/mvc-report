@@ -29,7 +29,7 @@ class Card
      * @param string $suit
      * @param integer $value
      */
-    public function __construct(string $suit = "joker", int $value) {
+    public function __construct(string $suit, int $value) {
         $this->value = $value;
         $this->suit = $suit;
     }

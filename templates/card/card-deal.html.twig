@@ -9,18 +9,18 @@
     {% for card in player %}
 
         <div class="card
-        {% if card["suit"] == "&hearts;" or card["suit"] == "&diams;" %}
+        {% if card.getSuit == "&hearts;" or card.getSuit == "&diams;" %}
              red
         {% else %}
             black
         {% endif %}
         "
         >
-        <p class="symbol-top">{{ card["suit"]|raw }}</p>
+        <p class="symbol-top">{{ card.getSuit|raw }}</p>
         <p class="symbol-center">
-            {{ card["value"]|raw }}
+            {{ card.asString|raw }}
         </p>
-        <p class="symbol-bottom">{{ card["suit"]|raw }}</p>
+        <p class="symbol-bottom">{{ card.getSuit|raw }}</p>
         </div>
     {% endfor %}
     </div>

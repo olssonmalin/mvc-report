@@ -7,15 +7,29 @@ use App\Card\Deck;
  */
 class Player
 {
-    private $hand;
+    private $hand= [];
+    private $score = 0;
 
-    public function __construct(int $cards, Deck $deck)
+    public function __construct()
     {
-        $this->hand = $deck->draw($cards);
+
     }
 
     public function getHand()
     {
         return $this->hand;
+    }
+
+
+    public function addCard($cards) 
+    {   
+        foreach ($cards as &$card) {
+            array_push($this->hand, $card);
+            $this->score += $card->getValue();
+        }
+    }
+
+    public function getScore() {
+        return $this->score;
     }
 }

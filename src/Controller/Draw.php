@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Card\Deck;
+use App\Card\Card;
 use App\Card\Deck2;
 use App\Card\Player;
 use App\Card\DeckTooSmallException;
@@ -33,7 +34,7 @@ class Draw extends AbstractController
     public function deckDrawNumber(int $number, SessionInterface $session): Response
     {
         $title = 'Draw';
-        $session->set("deck", $session->get("deck") ?? new Deck());
+        $session->set("deck", $session->get("deck") ?? new Deck(Card::class));
         $deck = $session->get("deck");
         $deck->shuffle();
         try {

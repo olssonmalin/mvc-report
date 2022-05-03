@@ -1,0 +1,60 @@
+{% include 'header.html.twig' %}
+    <main>
+    <h1> {{ title }} </h1>
+{% include 'block/flash-message.html.twig' %}
+     <div class="game-div">
+        <div class="player-div">
+            <p>Bank score: {{ bankScore }}</p>
+            <div class="deck-div">
+            {% for card in bankHand %}
+                <div class="card
+                {% if card.getSuit == "&hearts;" or card.getSuit == "&diams;" %}
+                     red
+                {% else %}
+                    black
+                {% endif %}
+                "
+                >
+                <p class="symbol-top">{{ card.getSuit|raw }}</p>
+                <p class="symbol-center">
+                    {{ card.asString|raw }}
+                </p>
+                <p class="symbol-bottom">{{ card.getSuit|raw }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="player-div">
+            <div class="deck-div">
+            {% for card in playerHand %}
+                <div class="card
+                {% if card.getSuit == "&hearts;" or card.getSuit == "&diams;" %}
+                     red
+                {% else %}
+                    black
+                {% endif %}
+                "
+                >
+                <p class="symbol-top">{{ card.getSuit|raw }}</p>
+                <p class="symbol-center">
+                    {{ card.asString|raw }}
+                </p>
+                <p class="symbol-bottom">{{ card.getSuit|raw }}</p>
+                </div>
+            {% endfor %}
+            </div>
+            <p>Your Score: {{ playerScore }}</p>
+        </div>
+    </div>
+    {% if gameOver %}
+    <a href="{{ path('resetGame') }}"><button>Nytt spel</button></a>
+    {% else %}
+    <a href="{{ path('startGame') }}"><button>Hit</button></a>
+    <a href="{{ path('standGame') }}"><button>Stand</button></a>
+    {% endif %}
+
+    {# <div class="column"><a href="{{ path('draw') }}">Nytt kort</a></div> #}
+
+    </main>
+
+{% include 'footer.html.twig' %}

@@ -1,0 +1,45 @@
+{% include 'header.html.twig' %}
+    <main>
+    <h1> {{ title }} </h1>
+        
+
+    </main>
+
+    {% apply markdown_to_html %}
+        {% include 'docs/psuedocode.md'%}
+    {% endapply %}
+
+
+    <h3>
+        PsuedoKod
+    </h3>
+
+    <h4>
+    Game-klassen
+    </h4>
+
+    {% apply markdown_to_html %}
+        {% include 'docs/game.md'%}
+    {% endapply %}
+
+
+    <h4>
+    GameController
+    </h4>
+
+    {% apply markdown_to_html %}
+        {% include 'docs/gameController.md'%}
+    {% endapply %}
+
+    <h3>
+    Klassdiagram
+    </h3>
+
+    <img src="/img/classdiagram.png">
+
+    <h3>
+    Flödesdiagram
+    </h3>
+
+    <img src="/img/flowchart.png">
+{% include 'footer.html.twig' %}

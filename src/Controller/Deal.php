@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Card\Deck;
+use App\Card\Card;
 use App\Card\Deck2;
 use App\Card\Player;
 use App\Card\DeckTooSmallException;
@@ -24,16 +25,17 @@ class Deal extends AbstractController {
     {
         $title = 'Deal';
         $session->set("deck", $session->get("deck") ?? new Deck(Card::class));
-        $session->set("game", $session->get("game") ?? []);
+        $session->set("gameSet", $session->get("gameSet") ?? []);
         $deck = $session->get("deck");
-        $game = $session->get("game");
+        $gameSet = $session->get("gameSet");
         $deck->shuffle();
         try {
-            $game = [];
+            $gameSet = [];
             for ($i = 0; $i < $players; $i++)
             {
-                $player = New Player($cards, $deck);
-                array_push($game, $player->getHand());
+                $player = New Player();
+                $player->setHand($deck->draw($cards));
+                array_push($gameSet, $player->getHand());
             }
         } catch (DeckTooSmallException $e) {
             $this->addFlash("warning", "Not enough cards in the deck.");
@@ -41,7 +43,7 @@ class Deal extends AbstractController {
 
         return $this->render('card/card-deal.html.twig', [
             'title' => $title,
-            'game' => $game,
+            'game' => $gameSet,
             'length' => $deck->getLen()
         ]);
     }

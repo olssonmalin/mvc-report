@@ -85,7 +85,7 @@ class Deck
      * Draws given number of cards from deck
      *
      * @param integer $num
-     * @return void
+     * @return list
      */
     public function draw(int $num = 1)
     {
@@ -95,7 +95,9 @@ class Deck
         }
         for ($i =0; $i < $num; $i++)
         {
-            array_push($deckPart, ['value' => $this->deck[0]->asString(), 'suit' => $this->deck[0]->getSuit()]);
+            // array_push($deckPart, ['value' => $this->deck[0]->asString(), 'suit' => $this->deck[0]->getSuit()]);
+            array_push($deckPart, $this->deck[0]);
+
             array_splice($this->deck, 0, 1);
         }
         $this->lastDrawn = $deckPart;
