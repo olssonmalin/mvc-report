@@ -52,7 +52,7 @@ class GameController extends AbstractController
 
         // $game = new Game(Deck::class, Player::class, Card::class);
 
-        $game->hit();
+        // $game->hit();
         $gameOver = false;
         $playerhand = $game->getPlayer()->getHand();
         $bankHand = $game->getBank()->getHand();
@@ -113,5 +113,16 @@ class GameController extends AbstractController
         $session->set("game", new Game(Deck::class, Player::class, Card::class));
         return $this->redirectToRoute('startGame');
 
+    }
+
+     /**
+     * @Route("/game/hit", name="hitGame", methods={"GET", "HEAD"})
+     */
+    public function hitGame(SessionInterface $session): Response
+    {   
+        $game = $session->get("game");
+
+        $game->hit();
+        return $this->redirectToRoute('startGame');
     }
 }
