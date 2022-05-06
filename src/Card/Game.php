@@ -4,11 +4,42 @@ namespace App\Card;
 
 class Game
 {   
+    /**
+     * Player object
+     *
+     * @var Player
+     */
     private Player $player;
+
+    /**
+     * Bank object
+     *
+     * @var Player
+     */
     private Player $bank;
+
+    /**
+     * Deck object
+     *
+     * @var Deck
+     */
     private Deck $deck;
+
+    /**
+     * Player object of the current player (player or bank)
+     *
+     * @var Player
+     */
     private Player $currentPlayer;
 
+
+    /**
+     * Constructs game (21) object
+     *
+     * @param Deck $deck
+     * @param Player $player
+     * @param Card $card
+     */
     public function __construct($deck, $player, $card)
     {
         $this->player = new $player;
@@ -17,6 +48,11 @@ class Game
         $this->currentPlayer = $this->player;
     }
 
+    /**
+     * Deals a card to the current player (player or bank)
+     *
+     * @return void
+     */
     public function hit(): void
     {   
         $this->deck->shuffle();
@@ -24,6 +60,12 @@ class Game
         $this->currentPlayer->addCard($card);
     }
 
+    /**
+     * Stops dealing for current player
+     * Switch current player if the current player is player and not bank
+     *
+     * @return void
+     */
     public function stand(): void
     {
         if ($this->currentPlayer !== $this->bank) {
@@ -32,6 +74,11 @@ class Game
         }
     }
 
+    /**
+     * Automatically plays for bank player
+     *
+     * @return void
+     */
     public function playBank(): void
     {
         while ($this->bank->getScore() < 17) {
@@ -39,21 +86,45 @@ class Game
         }
     }
 
+    /**
+     * Cahcks if the player won or not
+     *
+     * @return boolean
+     */
     public function playerWon(): bool
     {
         return $this->bank->getScore() > 21 || $this->bank->getScore() < $this->player->getScore() && $this->player->getScore() <= 21;
         
     }
 
+    /**
+     * Gets player object
+     *
+     * @return Player
+     */
     public function getPlayer(): Player
     {
         return $this->player;
     }
 
+    /**
+     * Gets bank player object
+     *
+     * @return Player
+     */
     public function getBank(): Player
     {
         return $this->bank;
     }
 
+    /**
+     * Gets currentplayer player object
+     *
+     * @return Player
+     */
+    public function getCurrentPlayer(): Player
+    {
+        return $this->currenPlayer;
+    }
 
 }

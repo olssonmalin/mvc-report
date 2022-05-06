@@ -34,7 +34,7 @@ class Deal extends AbstractController {
             for ($i = 0; $i < $players; $i++)
             {
                 $player = New Player();
-                $player->setHand($deck->draw($cards));
+                $player->addCard($deck->draw($cards));
                 array_push($gameSet, $player->getHand());
             }
         } catch (DeckTooSmallException $e) {

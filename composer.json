@@ -105,10 +105,14 @@
         "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 8 src || true",
         "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
+        "phpdoc": "tools/phpdoc/phpdoc",
+        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "lint": [
             "@phpcpd",
             "@phpmd",
-            "@phpstan"
+            "@phpstan",
+            "@phpdoc",
+            "@phpunit"
         ]
     },
     "conflict": {
