@@ -124,7 +124,7 @@ class Game
      */
     public function getCurrentPlayer(): Player
     {
-        return $this->currenPlayer;
+        return $this->currentPlayer;
     }
 
 }

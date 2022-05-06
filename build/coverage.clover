@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651841932">
-  <project timestamp="1651841932">
+<coverage generated="1651848142">
+  <project timestamp="1651848142">
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="9" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="19" coveredelements="19"/>
       </class>
-      <line num="32" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="24"/>
-      <line num="33" type="stmt" count="24"/>
-      <line num="34" type="stmt" count="24"/>
-      <line num="42" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="44" type="stmt" count="3"/>
+      <line num="32" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="31"/>
+      <line num="33" type="stmt" count="31"/>
+      <line num="34" type="stmt" count="31"/>
+      <line num="42" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="44" type="stmt" count="7"/>
       <line num="52" type="method" name="getSuit" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="54" type="stmt" count="2"/>
       <line num="62" type="method" name="asString" visibility="public" complexity="6" crap="6" count="7"/>
@@ -30,11 +30,11 @@
       <class name="App\Card\Deck" namespace="global">
         <metrics complexity="12" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="27" coveredelements="27"/>
       </class>
-      <line num="25" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="13"/>
-      <line num="27" type="stmt" count="13"/>
-      <line num="28" type="stmt" count="13"/>
-      <line num="29" type="stmt" count="13"/>
-      <line num="30" type="stmt" count="13"/>
+      <line num="25" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="20"/>
+      <line num="27" type="stmt" count="20"/>
+      <line num="28" type="stmt" count="20"/>
+      <line num="29" type="stmt" count="20"/>
+      <line num="30" type="stmt" count="20"/>
       <line num="40" type="method" name="getDeck" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="42" type="stmt" count="1"/>
       <line num="50" type="method" name="toString" visibility="public" complexity="2" crap="2" count="1"/>
@@ -42,21 +42,21 @@
       <line num="53" type="stmt" count="1"/>
       <line num="54" type="stmt" count="1"/>
       <line num="56" type="stmt" count="1"/>
-      <line num="64" type="method" name="shuffle" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="66" type="stmt" count="1"/>
-      <line num="74" type="method" name="getLen" visibility="public" complexity="1" crap="1" count="7"/>
-      <line num="76" type="stmt" count="7"/>
+      <line num="64" type="method" name="shuffle" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="66" type="stmt" count="5"/>
+      <line num="74" type="method" name="getLen" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="76" type="stmt" count="11"/>
       <line num="79" type="method" name="getLastDrawn" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="81" type="stmt" count="1"/>
-      <line num="90" type="method" name="draw" visibility="public" complexity="3" crap="3" count="5"/>
-      <line num="92" type="stmt" count="5"/>
-      <line num="93" type="stmt" count="5"/>
+      <line num="90" type="method" name="draw" visibility="public" complexity="3" crap="3" count="9"/>
+      <line num="92" type="stmt" count="9"/>
+      <line num="93" type="stmt" count="9"/>
       <line num="94" type="stmt" count="1"/>
-      <line num="96" type="stmt" count="5"/>
-      <line num="99" type="stmt" count="5"/>
-      <line num="101" type="stmt" count="5"/>
-      <line num="103" type="stmt" count="5"/>
-      <line num="104" type="stmt" count="5"/>
+      <line num="96" type="stmt" count="9"/>
+      <line num="99" type="stmt" count="9"/>
+      <line num="101" type="stmt" count="9"/>
+      <line num="103" type="stmt" count="9"/>
+      <line num="104" type="stmt" count="9"/>
       <metrics loc="107" ncloc="67" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="27" coveredelements="27"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Deck2.php">
@@ -78,45 +78,47 @@
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Game.php">
       <class name="App\Card\Game" namespace="global">
-        <metrics complexity="11" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="4" elements="22" coveredelements="5"/>
+        <metrics complexity="12" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="24" coveredelements="24"/>
       </class>
-      <line num="43" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="45" type="stmt" count="1"/>
-      <line num="46" type="stmt" count="1"/>
-      <line num="47" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="56" type="method" name="hit" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="59" type="stmt" count="0"/>
-      <line num="60" type="stmt" count="0"/>
-      <line num="69" type="method" name="stand" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="71" type="stmt" count="0"/>
-      <line num="72" type="stmt" count="0"/>
-      <line num="73" type="stmt" count="0"/>
-      <line num="82" type="method" name="playBank" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="84" type="stmt" count="0"/>
-      <line num="85" type="stmt" count="0"/>
-      <line num="94" type="method" name="playerWon" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="96" type="stmt" count="0"/>
-      <line num="105" type="method" name="getPlayer" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="107" type="stmt" count="0"/>
-      <line num="115" type="method" name="getBank" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="117" type="stmt" count="0"/>
-      <metrics loc="121" ncloc="63" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="4" elements="22" coveredelements="5"/>
+      <line num="43" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="45" type="stmt" count="8"/>
+      <line num="46" type="stmt" count="8"/>
+      <line num="47" type="stmt" count="8"/>
+      <line num="48" type="stmt" count="8"/>
+      <line num="56" type="method" name="hit" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="58" type="stmt" count="4"/>
+      <line num="59" type="stmt" count="4"/>
+      <line num="60" type="stmt" count="4"/>
+      <line num="69" type="method" name="stand" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="72" type="stmt" count="1"/>
+      <line num="73" type="stmt" count="1"/>
+      <line num="82" type="method" name="playBank" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="84" type="stmt" count="1"/>
+      <line num="85" type="stmt" count="1"/>
+      <line num="94" type="method" name="playerWon" visibility="public" complexity="3" crap="3" count="2"/>
+      <line num="96" type="stmt" count="2"/>
+      <line num="105" type="method" name="getPlayer" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="107" type="stmt" count="3"/>
+      <line num="115" type="method" name="getBank" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="117" type="stmt" count="2"/>
+      <line num="125" type="method" name="getCurrentPlayer" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="127" type="stmt" count="2"/>
+      <metrics loc="130" ncloc="67" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="24" coveredelements="24"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Player.php">
       <class name="App\Card\Player" namespace="global">
         <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </class>
-      <line num="37" type="method" name="getHand" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="39" type="stmt" count="2"/>
-      <line num="48" type="method" name="addCard" visibility="public" complexity="2" crap="2" count="2"/>
-      <line num="50" type="stmt" count="2"/>
-      <line num="51" type="stmt" count="2"/>
-      <line num="52" type="stmt" count="2"/>
-      <line num="61" type="method" name="getScore" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="63" type="stmt" count="2"/>
-      <metrics loc="66" ncloc="34" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
+      <line num="37" type="method" name="getHand" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="39" type="stmt" count="3"/>
+      <line num="48" type="method" name="addCard" visibility="public" complexity="2" crap="2" count="6"/>
+      <line num="50" type="stmt" count="6"/>
+      <line num="51" type="stmt" count="6"/>
+      <line num="52" type="stmt" count="6"/>
+      <line num="60" type="method" name="getScore" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="62" type="stmt" count="5"/>
+      <metrics loc="65" ncloc="34" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/CardController.php">
       <class name="App\Controller\CardController" namespace="global">
@@ -292,6 +294,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="13" loc="905" ncloc="642" classes="11" methods="44" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="169" coveredstatements="48" elements="213" coveredelements="64"/>
+    <metrics files="13" loc="913" ncloc="646" classes="11" methods="45" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="170" coveredstatements="60" elements="215" coveredelements="83"/>
   </project>
 </coverage>
