@@ -26,7 +26,5 @@ class GameObjectTest extends TestCase
     {
         $game = new Game(Deck::class, Player::class, Card::class);
         $this->assertInstanceOf("\App\Card\Game", $game);
-
-        $this->;
     }
 }
