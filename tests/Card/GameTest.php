@@ -105,4 +105,19 @@ class GameObjectTest extends TestCase
 
         $this->assertFalse($game->playerWon());
     }
+
+    /**
+     * Confirms bank player has cards after playBank
+     */
+    public function testGamePlayBank()
+    {
+        $game = new Game(Deck::class, Player::class, Card::class);
+        $this->assertInstanceOf("\App\Card\Game", $game);
+
+        $game->stand();
+
+        $bankHand = $game->getBank()->getHand();
+
+        $this->assertTrue(count($bankHand) > 1);
+    }
 }
