@@ -55,7 +55,6 @@ class Player
 
     /**
      * Gets players score
-     *
      * @return int
      */
     public function getScore(): int
