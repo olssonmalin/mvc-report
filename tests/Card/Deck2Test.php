@@ -19,7 +19,7 @@ class Deck2ObjectTest extends TestCase
     }
 
     /**
-     * Confirm that full deck if 54 cards
+     * Confirm that full deck of 54 cards
      */
     public function testDeck2Count()
     {   
