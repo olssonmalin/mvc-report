@@ -1,4 +1,37 @@
 {% apply markdown_to_html %}
     ## Kmom04
 
+
+
+    **Berätta hur du upplevde att skriva kod som testar annan kod med PHPUnit och hur du upplever phpunit rent allmänt.**
+
+    Jag tycker att det är rätt kul och enkelt att skriva testkod med PHP unit. Eftersom vi skrev en del tester till vår kod i OOPython-kursen var upplägget välbekant.
+    phpunit upplever jag som smidigt och enkelt. Dokumentationen var tydlig och enkel att hitta i.
+
+    **Hur väl lyckades du med kodtäckningen av din kod, lyckades du nå mer än 90% kodtäckning?**
+
+    Jag lyckades med att få 100% täckning på mina klasser dock som Mos sa i föreläsningen så betyder ju inte det att alla tester är bra tester. 
+    Testerna min Game-klass tycker jag inte blev så bra men jag ville ändå göra dom för att öva på att göra enhetstester.
+
+    **Upplever du din egen kod som “testbar kod” eller finns det delar i koden som är mer eller mindre testbar och finns det saker som kan göras för att förbättra kodens testbarhet?**
+
+    En del av min kod var testbar, främst klassen card eftersom den inte använder sig av någon annan klass. Jag insåg medan jag skrev testerna utifrån den koden jag har skrivit att den var svårt att vi till bra tester för många metoder då de använder sig av andra klasser och då blev inte testerna så specifica för klassen.
+    Jag har också många metoder som inte returnerar något utan ändrar i attribut eller i ett annat objekts attribut. Det ser jag som ett tecken på att klasserna inte är så testbara.
+
+    **Valde du att skriva om delar av din kod för att förbättra den eller göra den mer testbar, om så berätta lite hur du tänkte.**
+
+    Jag valde att inte ändra i mina klasser för att då hade jag behövt gjort om hela klasserna och ulägget av mitt spel. 
+    Hade jag haft mer tid hade jag nog gjort det. 
+    Jag ville också se det som en utmaning att hitta andra assertions som kan testa klassen ändå utan att vara beroende av andra klasser men det känner jag att jag misslyckades med. Jag läste dock mer i dokumentationen för att försöka lösa detta så det var ändå lärorikt. 
+
+    **Fundera över om du anser att testbar kod är något som kan identifiera “snygg och ren kod”.**
+
+    Om koden är uppdelad bra och varje metod inte har för många utfall eller gör för mycket så blir den mer testbar därför anser jag att detta har ett samband. Däremot kände jag mig förvirrad över vad ska skulle fokusera på; Principer som cohesion när det kommer till att skriva kod enligt OOP eller testbarhet. En kod som har hög cohesion blir lätt uppdelar i fler klasser och då blir den kanske inte lika testbar utifrån 
+    att kunna testa en klass metoder utan att vara obroende av en annan klass. Jag anser att min kod har hyfsat hög cohesion och det var något jag ville fokusera på när jag skrev klasserna men detta krockade med att skriva tester. Kanske är det mindre ändringar som kan lösa detta som jag bara inte ser. Jag känner ändå att jag har lärt mig mycket av att ha dessa koncept i åtanke och att fundera på hur de påverkar varandra. 
+
+    **Vilken är din TIL för detta kmom?**
+
+    Mitt TIL detta kmom är att jag har insett att tester kan lätt bli färgade av hur man skriver sim kod så att jobba enligt TDD är något jag vill göra i framtiden. 
+
+
 {% endapply %}
