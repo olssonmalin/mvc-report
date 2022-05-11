@@ -127,3 +127,7 @@ body {
     flex-direction: row;
     flex-grow: 0;
 }
+
+.book-info {
+    margin-left: 2em;
+}

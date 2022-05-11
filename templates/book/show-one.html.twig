@@ -14,7 +14,15 @@
     <div class="book-container">
 
     <div class="book-img">
+        {% if (book.img) %}
         <img  src="{{ asset(book.img) }}">
+        {% endif %}
+        <div>
+            <h6>Kategori: {{book.category}}</h6>
+            <h6>Språk: {{book.language}}</h6>
+            <h6>Utgivningsdatum: {{book.releaseDate|date('Y-m-d') }}</h6>
+            <h6>ISBN: {{book.isbn}}</h6>
+        </div>
     </div>
     <div class="book-info">
         <h2>{{book.title}}</h2>
@@ -24,6 +32,7 @@
     </div>
     </div>
     <div>
+    <a href={{ path("book_show_all")}}><h5>&larr; Tillbaka</h5></a>
     <a href={{ path("edit-book", {"id": book.id })}}><button>Update</button></a>
     <a href={{ path("delete-book", {"id": book.id })}}><button>Delete</button></a>
     </div>

@@ -12,6 +12,6 @@
 
     <h1> {{ title }}</h1>
     {% include 'form/book/update.html.twig'%}
-  
+    <a href={{ path("book_by_id", {"id": book.id })}}><h5>&larr; Tillbaka</h5></a>
 </div>
 {% endblock %}

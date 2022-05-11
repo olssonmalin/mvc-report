@@ -9,17 +9,17 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Bibliotek</h1>
 
      <div class="row">
-            <div class="column"><a href="{{ path('add_book') }}">Add book</a></div>
-            <div class="column"><a href="{{ path('book_show_all') }}">All books</a></div>
+            <div class="column"><a href="{{ path('add_book') }}">Lägg till bok</a></div>
+            <div class="column"><a href="{{ path('book_show_all') }}">Tillgängliga böcker</a></div>
     </div>
 
-    This friendly message is coming from:
+    {# This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/BookController.php'|file_link(0) }}">src/Controller/BookController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/Users/malinolsson/dbwebb-kurser/mvc/me/report/templates/book/index.html.twig'|file_link(0) }}">templates/book/index.html.twig</a></code></li>
-    </ul>
+    </ul> #}
 </div>
 {% endblock %}
