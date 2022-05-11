@@ -87,3 +87,43 @@ body {
 .player-div {
     min-height: 300px;
 }
+
+.book-item {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    /* font-size: 20px; */
+    /* font-weight: 600; */
+    line-height: 28px;
+    padding: 12px 20px;
+    /* text-align: center; */
+    transition-duration: .15s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    margin-bottom: 1em;
+    width: 60%;
+}
+
+.book-item:hover {
+    background: rgb(251, 193, 245);
+}
+
+
+.book-item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-img {
+    width: 200px;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+}
