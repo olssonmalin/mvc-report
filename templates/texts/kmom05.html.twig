@@ -5,17 +5,26 @@
 
     **Gick det bra att jobba igenom övningen med Symfony och Doctrine. Något särskilt du tänkte/reagerade på under övningen?**
 
-    Jag tycker det gick bra att jobba igenom övningen. Jag kände att Doctrine var väldigt smidigt att komma igång med.
+    Jag tycker det gick bra att jobba igenom övningen. Jag kände att Doctrine var väldigt smidigt att komma igång med. Det jag reagerade över var att det var så enkelt att skapa entiteten och lägga grunden till tabellen i databasen.
 
     **Berätta om din applikation och hur du tänkte när du byggde upp den. Tänkte du något speciellt på användargränssnittet? Gick det bra att jobba med ORM i CRUD eller vad anser du om det?**
 
+    När jag byggde upp routrar till biblioteket utgick jag ifrån det som vi gjorde med produkter i övningen fast med böcker istället. Jag insåg tidigt att jag hade stor hjälp av att visa datan i json-format innan jag byggde upp templates för att se till att
+    funktionalitetn fungerade som den skulle. För de routrar som använder sig av formulär (update och create) gjorde jag två funktioner en för att visa formuläret och en process-funktion som använder doctrine för att ändra/lägga till i databasen. För delete och show all har jag varsin route. Show-all-routen hämtar alla böcker i databasen och renderar en template. Delete hämtar den bok som användaren vill ta bort med hjälp av dess id, tar bort boken och routar till show-all-books. 
+    Där kan vi då se att boken har tagits bort och med att den inte finns med i listan.
 
     **Berätta om du gjorde (delar av) extrauppgiften med användare och login.**
 
+    Jag hade tyvärr inte tid med att göra extrauppgiften detta kursmoment.
+
     **Vad är din uppfattning om ORM så här långt och relatera gärna till andra sätt att jobba med applikationskod mot databaser?**
+
+    ORM är ett väldigt smidigt sätt att jobba en databas för en webbplats. Det är tydligt vad som händer och gör det som behövs för att kunna jobba med CRUD. De delar som lätt blir upprapde annars när man man inte jobbar med ORM som t.ex koppla tilldatabasen försvinner så koden blir renare.
+    Nu har vi en del kunskap om att jobba mot en databas men har man inte det är ORM ett enkelt sätt att använda sig av en databas till sin webbapplikation utan att kunna så mycket SQL.
 
     **Vilken är din TIL för detta kmom?**
 
+    Mitt TIL detta kmom är hur man börjar jobba med doctrine med symfony. 
 
 
 {% endapply %}
