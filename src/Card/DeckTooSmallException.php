@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Card;
 
 use Symfony\Component\Config\Definition\Exception\Exception;

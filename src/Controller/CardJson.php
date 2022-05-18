@@ -14,10 +14,8 @@ use App\Card\Deck2;
 use App\Card\Player;
 use App\Card\DeckTooSmallException;
 
-
 class CardJson extends AbstractController
-{   
-
+{
     private $deck;
 
     /**
@@ -42,7 +40,7 @@ class CardJson extends AbstractController
      * @Route("/card/api/deck/shuffle", name="shuffle-api")
      */
     public function deckShuffleApi(SessionInterface $session): Response
-    {   
+    {
         $this->deck = new Deck(Card::class);
         $this->deck->shuffle();
         $session->set("deck", $this->deck);

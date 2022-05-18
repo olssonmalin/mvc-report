@@ -57,7 +57,7 @@ class GameController extends AbstractController
         $playerhand = $game->getPlayer()->getHand();
         $bankHand = $game->getBank()->getHand();
         $playerScore = $game->getPlayer()->getScore();
-        $BankScore = $game->getBank()->getScore();
+        $bankScore = $game->getBank()->getScore();
         if ($game->getPlayer()->getScore() > 21) {
             $this->addFlash("warning", "Sorry you lost :(");
             $gameOver = true;
@@ -68,7 +68,7 @@ class GameController extends AbstractController
             'playerHand' => $playerhand,
             'bankHand' => $bankHand,
             'playerScore' => $playerScore,
-            'bankScore' => $BankScore,
+            'bankScore' => $bankScore,
             'gameOver' => $gameOver
         ]);
     }
@@ -88,7 +88,7 @@ class GameController extends AbstractController
         $playerhand = $game->getPlayer()->getHand();
         $bankHand = $game->getBank()->getHand();
         $playerScore = $game->getPlayer()->getScore();
-        $BankScore = $game->getBank()->getScore();
+        $bankScore = $game->getBank()->getScore();
 
         if ($game->playerWon()) {
             $this->addFlash("success", "Congratulations! You won!");
@@ -101,7 +101,7 @@ class GameController extends AbstractController
             'playerHand' => $playerhand,
             'bankHand' => $bankHand,
             'playerScore' => $playerScore,
-            'bankScore' => $BankScore
+            'bankScore' => $bankScore
         ]);
     }
 
@@ -112,14 +112,13 @@ class GameController extends AbstractController
     {
         $session->set("game", new Game(Deck::class, Player::class, Card::class));
         return $this->redirectToRoute('startGame');
-
     }
 
      /**
      * @Route("/game/hit", name="hitGame", methods={"GET", "HEAD"})
      */
     public function hitGame(SessionInterface $session): Response
-    {   
+    {
         $game = $session->get("game");
 
         $game->hit();

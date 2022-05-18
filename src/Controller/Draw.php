@@ -16,19 +16,18 @@ use App\Card\DeckTooSmallException;
 
 class Draw extends AbstractController
 {
-
      /**
      * @Route("/card/deck/draw", name="draw")
      */
     public function deckDraw(SessionInterface $session): Response
     {
-        
+
         return $this->deckDrawNumber(1, $session);
     }
 
     /**
-     * @Route("/card/deck/draw/{number}", 
-     * name="draw-number", 
+     * @Route("/card/deck/draw/{number}",
+     * name="draw-number",
      * methods={"GET", "HEAD"})
      */
     public function deckDrawNumber(int $number, SessionInterface $session): Response
@@ -66,5 +65,4 @@ class Draw extends AbstractController
             'number' => $number
         ]);
     }
-
 }

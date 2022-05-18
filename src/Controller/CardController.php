@@ -14,10 +14,8 @@ use App\Card\Deck2;
 use App\Card\Player;
 use App\Card\DeckTooSmallException;
 
-
 class CardController extends AbstractController
 {
-
     /**
      * @Route("/card", name="card", methods={"GET", "HEAD"})
      */
@@ -76,14 +74,13 @@ class CardController extends AbstractController
 
 
     /**
-     * @Route("/card/deck/reset", 
-     * name="reset", 
+     * @Route("/card/deck/reset",
+     * name="reset",
      * methods={"GET","POST", "HEAD"})
      */
     public function resetSessionDeck(SessionInterface $session)
-    {   
+    {
         $session->set("deck", new Deck(Card::class));
         return $this->redirectToRoute('card');
     }
-
 }

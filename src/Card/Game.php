@@ -3,7 +3,7 @@
 namespace App\Card;
 
 class Game
-{   
+{
     /**
      * Player object
      *
@@ -42,8 +42,8 @@ class Game
      */
     public function __construct($deck, $player, $card)
     {
-        $this->player = new $player;
-        $this->bank = new $player;
+        $this->player = new $player();
+        $this->bank = new $player();
         $this->deck = new $deck($card);
         $this->currentPlayer = $this->player;
     }
@@ -54,7 +54,7 @@ class Game
      * @return void
      */
     public function hit(): void
-    {   
+    {
         $this->deck->shuffle();
         $card = $this->deck->draw();
         $this->currentPlayer->addCard($card);
@@ -94,7 +94,6 @@ class Game
     public function playerWon(): bool
     {
         return $this->bank->getScore() > 21 || $this->bank->getScore() < $this->player->getScore() && $this->player->getScore() <= 21;
-        
     }
 
     /**
@@ -126,5 +125,4 @@ class Game
     {
         return $this->currentPlayer;
     }
-
 }

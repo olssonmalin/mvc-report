@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Card;
-use App\Card\Card;
 
+use App\Card\Card;
 
 /**
  * Showing off a standard class with methods and properties.
  */
 class Card
-{   
+{
     /**
      * Holds cards suit
      *
@@ -29,7 +29,8 @@ class Card
      * @param string $suit
      * @param integer $value
      */
-    public function __construct(string $suit, int $value) {
+    public function __construct(string $suit, int $value)
+    {
         $this->value = $value;
         $this->suit = $suit;
     }
@@ -60,7 +61,7 @@ class Card
      * @return string
      */
     public function asString(): string
-    {   
+    {
         if ($this->value === 0) {
             return "JOKER";
         } elseif ($this->value === 11) {
@@ -71,7 +72,7 @@ class Card
             return "K";
         } elseif ($this->value === 14) {
             return "A";
-        } 
+        }
         return "$this->value";
     }
 }

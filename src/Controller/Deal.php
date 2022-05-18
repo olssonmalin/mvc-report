@@ -14,11 +14,11 @@ use App\Card\Deck2;
 use App\Card\Player;
 use App\Card\DeckTooSmallException;
 
-class Deal extends AbstractController {
-
+class Deal extends AbstractController
+{
      /**
-     * @Route("/card/deck/deal/{players}/{cards}", 
-     * name="deal", 
+     * @Route("/card/deck/deal/{players}/{cards}",
+     * name="deal",
      * methods={"GET","POST", "HEAD"})
      */
     public function deckDeal(int $players, int $cards, SessionInterface $session): Response
@@ -31,9 +31,8 @@ class Deal extends AbstractController {
         $deck->shuffle();
         try {
             $gameSet = [];
-            for ($i = 0; $i < $players; $i++)
-            {
-                $player = New Player();
+            for ($i = 0; $i < $players; $i++) {
+                $player = new Player();
                 $player->addCard($deck->draw($cards));
                 array_push($gameSet, $player->getHand());
             }
@@ -56,9 +55,9 @@ class Deal extends AbstractController {
      * )
      */
     public function dealForm(): Response
-    {   
+    {
         $title = 'Deal';
-        return $this->render('form/deal.html.twig',[
+        return $this->render('form/deal.html.twig', [
             'title' => $title
         ]);
     }
@@ -81,5 +80,4 @@ class Deal extends AbstractController {
             'cards' => $cards
         ]);
     }
-
 }

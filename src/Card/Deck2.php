@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Card;
+
 use App\Card\Deck;
 use App\Card\Card;
 
@@ -10,7 +11,7 @@ use App\Card\Card;
 class Deck2 extends Deck
 {
     /**
-     * Constructs deck2 
+     * Constructs deck2
      * a deck with two jokers
      *
      * @param Card $card
@@ -23,5 +24,4 @@ class Deck2 extends Deck
             array_push($this->deck, $card);
         }
     }
-
 }

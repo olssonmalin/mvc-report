@@ -43,18 +43,11 @@ class BookController extends AbstractController
     public function addBookProcess(
         Request $request,
         ManagerRegistry $doctrine
-        ): Response
-    {
-        $result =[
-            "title" => $request->request->get("title"),
-            "description" => $request->request->get("description"),
-            "img" => $request->request->get("img"),
-            "date" => $request->request->get("release")
-        ];
+    ): Response {
 
         $entityManager = $doctrine->getManager();
 
-        $book = new Book;
+        $book = new Book();
         $book->setTitle($request->request->get("title"));
         $book->setDescription($request->request->get("description"));
         $book->setImg($request->request->get("img"));
@@ -71,7 +64,6 @@ class BookController extends AbstractController
 
         // return $this->json($result);
         return $this->redirectToRoute('book_show_all');
-
     }
 
     /**
@@ -84,7 +76,7 @@ class BookController extends AbstractController
             ->findAll();
 
         $title = "All books";
-        
+
         // return $this->json($books);
         return $this->render('book/show-all.html.twig', [
             'title' => $title,
@@ -101,8 +93,8 @@ class BookController extends AbstractController
     ): Response {
         $book = $bookRepository
             ->find($id);
-        
-        
+
+
         // return $this->json($book);
         return $this->render('book/show-one.html.twig', [
             'book' => $book
@@ -111,7 +103,7 @@ class BookController extends AbstractController
 
     /**
      * @Route("/book/edit/{id}",
-     *      defaults={"id" = 1}, 
+     *      defaults={"id" = 1},
      *      name="edit-book",
      *      methods={"GET"})
      */
@@ -121,10 +113,10 @@ class BookController extends AbstractController
     ): Response {
         $book = $bookRepository
             ->find($id);
-        
+
         $title = "Update";
-        
-        
+
+
         // return $this->json($book);
         return $this->render('book/update.html.twig', [
             'title' => $title,
@@ -138,7 +130,6 @@ class BookController extends AbstractController
      */
     public function editBookProcess(
         Request $request,
-        BookRepository $bookRepository,
         ManagerRegistry $doctrine
     ): Response {
 
@@ -147,7 +138,7 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$request->request->get("id")
+                'No book found for id ' . $request->request->get("id")
             );
         }
 
@@ -159,11 +150,9 @@ class BookController extends AbstractController
         $book->setISBN(intval($request->request->get("isbn")));
         $book->setCategory($request->request->get("category"));
         $book->setLanguage($request->request->get("language"));
-        
+
         $entityManager->flush();
 
-        $title = "Update";
-        
         // return $this->json($book);
         return $this->redirectToRoute('book_by_id', ["id" => $request->request->get("id")]);
     }
@@ -180,7 +169,7 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
 
@@ -190,4 +179,3 @@ class BookController extends AbstractController
         return $this->redirectToRoute('book_show_all');
     }
 }
-

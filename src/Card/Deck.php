@@ -6,7 +6,7 @@ namespace App\Card;
  * Showing off a standard class with methods and properties.
  */
 class Deck
-{   
+{
     /**
      * Array holding card objects
      *
@@ -25,13 +25,13 @@ class Deck
     public function __construct($card)
     {
         foreach ($this->suits as &$suit) {
-            for($i = 2; $i <= 14; $i++) {
+            for ($i = 2; $i <= 14; $i++) {
                 $card = new $card($suit, $i);
                 array_push($this->deck, $card);
             }
         }
     }
-    
+
     /**
      * Gets card deck
      *
@@ -48,7 +48,7 @@ class Deck
      * @return array
      */
     public function toString(): array
-    {   
+    {
         $deck = [];
         foreach ($this->deck as &$card) {
             array_push($deck, ['value' => $card->asString(),'suit' => $card->getSuit()]);
@@ -93,8 +93,7 @@ class Deck
         if ($this->getLen() < $num) {
             throw new DeckTooSmallException("Not enough cards in deck");
         }
-        for ($i =0; $i < $num; $i++)
-        {
+        for ($i = 0; $i < $num; $i++) {
             // array_push($deckPart, ['value' => $this->deck[0]->asString(), 'suit' => $this->deck[0]->getSuit()]);
             array_push($deckPart, $this->deck[0]);
 
