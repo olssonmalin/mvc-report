@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Metrics</h1>
+
+<h2>Introduktion</h2>
+
+{% apply markdown_to_html %}
+        {% include 'metrics/introduktion.md'%}
+{% endapply %}
+
+<h2>Phpmetrics</h2>
+
+<h2>Scrutinizer</h2>
+
+<h2>Förbättringar</h2>
+
+{% endblock %}
