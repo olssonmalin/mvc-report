@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-05-18 07:09:49        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-05-23 14:28:29        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -253,7 +253,7 @@
 
     var relations = [
     {
-        "name": "\\App\\Repository\\ProductRepository",
+        "name": "\\App\\Repository\\BookRepository",
         "size": 3000,
         "relations": []
     },
@@ -264,16 +264,6 @@
     },
     {
         "name": "\\Doctrine\\Persistence\\ManagerRegistry",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Entity\\Product",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Repository\\BookRepository",
         "size": 3000,
         "relations": []
     },
@@ -383,6 +373,15 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\MetricsController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\GameController",
         "size": 3000,
         "relations": [
@@ -434,18 +433,6 @@
             "\\App\\Card\\Player",
             "\\Symfony\\Component\\Routing\\Annotation\\Route",
             "\\Symfony\\Component\\HttpFoundation\\Request"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProductController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Entity\\Product",
-            "\\Symfony\\Component\\Routing\\Annotation\\Route",
-            "\\App\\Repository\\ProductRepository"
         ]
     },
     {

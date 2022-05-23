@@ -85,7 +85,7 @@ class Deck
      * Draws given number of cards from deck
      *
      * @param integer $num
-     * @return list
+     * @return array
      */
     public function draw(int $num = 1)
     {

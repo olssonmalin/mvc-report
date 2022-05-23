@@ -11,8 +11,20 @@
 
 <h2>Phpmetrics</h2>
 
+{% apply markdown_to_html %}
+        {% include 'metrics/phpmetrics.md'%}
+{% endapply %}
+
 <h2>Scrutinizer</h2>
 
+{% apply markdown_to_html %}
+        {% include 'metrics/scrutinizer.md'%}
+{% endapply %}
+
 <h2>Förbättringar</h2>
+
+{% apply markdown_to_html %}
+        {% include 'metrics/improvements.md'%}
+{% endapply %}
 
 {% endblock %}

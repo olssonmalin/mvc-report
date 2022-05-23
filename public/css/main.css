@@ -131,3 +131,18 @@ body {
 .book-info {
     margin-left: 2em;
 }
+
+.metrics-img {
+    width: 50%;
+    margin: 10px;
+}
+
+.metrics-img-vertical {
+    height: 400px;
+    margin: 10px;
+
+}
+
+.text-img-container {
+    display: flex;
+}

@@ -23,6 +23,20 @@ class Card
      */
     private int $value;
 
+   /**
+    * Covered cards as string
+    *
+    *@var array
+    */
+    private $JQKA = [
+        0 => "JOKER",
+        10 => "10", 
+        11 => "J",
+        12 => "Q",
+        13 => "K",
+        14 => "A"
+    ];
+
     /**
      * Creates card, sets value and suit
      *
@@ -62,17 +76,11 @@ class Card
      */
     public function asString(): string
     {
-        if ($this->value === 0) {
-            return "JOKER";
-        } elseif ($this->value === 11) {
-            return "J";
-        } elseif ($this->value === 12) {
-            return "D";
-        } elseif ($this->value === 13) {
-            return "K";
-        } elseif ($this->value === 14) {
-            return "A";
-        }
+
+       if (array_key_exists($this->value, $this->JQKA)) {
+           return $this->JQKA[$this->value];
+       }
+
         return "$this->value";
     }
 }
