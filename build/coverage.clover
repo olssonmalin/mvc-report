@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653318122">
-  <project timestamp="1653318122">
+<coverage generated="1653319711">
+  <project timestamp="1653319711">
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="5" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
@@ -20,7 +20,7 @@
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Deck.php">
       <class name="App\Card\Deck" namespace="global">
-        <metrics complexity="12" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="27" coveredelements="27"/>
+        <metrics complexity="11" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="24" coveredelements="24"/>
       </class>
       <line num="25" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="21"/>
       <line num="27" type="stmt" count="21"/>
@@ -40,16 +40,13 @@
       <line num="76" type="stmt" count="12"/>
       <line num="79" type="method" name="getLastDrawn" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="81" type="stmt" count="1"/>
-      <line num="90" type="method" name="draw" visibility="public" complexity="3" crap="3" count="10"/>
-      <line num="92" type="stmt" count="10"/>
+      <line num="90" type="method" name="draw" visibility="public" complexity="2" crap="2" count="10"/>
       <line num="93" type="stmt" count="10"/>
       <line num="94" type="stmt" count="1"/>
-      <line num="96" type="stmt" count="10"/>
-      <line num="98" type="stmt" count="10"/>
-      <line num="100" type="stmt" count="10"/>
       <line num="102" type="stmt" count="10"/>
       <line num="103" type="stmt" count="10"/>
-      <metrics loc="106" ncloc="66" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="27" coveredelements="27"/>
+      <line num="104" type="stmt" count="10"/>
+      <metrics loc="107" ncloc="62" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="24" coveredelements="24"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Deck2.php">
       <class name="App\Card\Deck2" namespace="global">
@@ -420,6 +417,6 @@
       <line num="44" type="stmt" count="0"/>
       <metrics loc="77" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="17" loc="1346" ncloc="991" classes="15" methods="74" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="243" coveredstatements="52" elements="317" coveredelements="75"/>
+    <metrics files="17" loc="1347" ncloc="987" classes="15" methods="74" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="240" coveredstatements="49" elements="314" coveredelements="72"/>
   </project>
 </coverage>

@@ -89,16 +89,11 @@ class Deck
      */
     public function draw(int $num = 1)
     {
-        $deckPart = [];
         if ($this->getLen() < $num) {
             throw new DeckTooSmallException("Not enough cards in deck");
         }
-        for ($i = 0; $i < $num; $i++) {
-            // array_push($deckPart, ['value' => $this->deck[0]->asString(), 'suit' => $this->deck[0]->getSuit()]);
-            array_push($deckPart, $this->deck[0]);
 
-            array_splice($this->deck, 0, 1);
-        }
+        $deckPart = array_splice($this->deck, 0, $num);
         $this->lastDrawn = $deckPart;
         return $deckPart;
     }
