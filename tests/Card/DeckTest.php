@@ -131,9 +131,12 @@ class DeckObjectTest extends TestCase
     {
         $deck = new Deck(Card::class);
         $this->assertInstanceOf("\App\Card\Deck", $deck);
+    
+        $excpectedArray = $deck->getDeck();
 
-        $this->assertIsArray($deck->getDeck());
-        foreach ($deck->getDeck() as &$card)
+        $this->assertIsArray($excpectedArray);
+
+        foreach ($excpectedArray as &$card)
         {
             $this->assertInstanceOf("\App\Card\Card", $card);
         }

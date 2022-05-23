@@ -28,11 +28,11 @@ class Card
     *
     *@var array
     */
-    private $JQKA = [
+    private $JDKA = [
         0 => "JOKER",
         10 => "10", 
         11 => "J",
-        12 => "Q",
+        12 => "D",
         13 => "K",
         14 => "A"
     ];
@@ -77,8 +77,8 @@ class Card
     public function asString(): string
     {
 
-       if (array_key_exists($this->value, $this->JQKA)) {
-           return $this->JQKA[$this->value];
+       if (array_key_exists($this->value, $this->JDKA)) {
+           return $this->JDKA[$this->value];
        }
 
         return "$this->value";

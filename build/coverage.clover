@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652858379">
-  <project timestamp="1652858379">
+<coverage generated="1653316751">
+  <project timestamp="1653316751">
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
-        <metrics complexity="9" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="19" coveredelements="19"/>
+        <metrics complexity="5" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
       </class>
-      <line num="32" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="32"/>
-      <line num="34" type="stmt" count="32"/>
-      <line num="35" type="stmt" count="32"/>
-      <line num="43" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="45" type="stmt" count="8"/>
-      <line num="53" type="method" name="getSuit" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="55" type="stmt" count="2"/>
-      <line num="63" type="method" name="asString" visibility="public" complexity="6" crap="6" count="7"/>
-      <line num="65" type="stmt" count="7"/>
-      <line num="66" type="stmt" count="1"/>
-      <line num="67" type="stmt" count="6"/>
-      <line num="68" type="stmt" count="2"/>
-      <line num="69" type="stmt" count="5"/>
-      <line num="70" type="stmt" count="2"/>
-      <line num="71" type="stmt" count="4"/>
-      <line num="72" type="stmt" count="2"/>
-      <line num="73" type="stmt" count="3"/>
-      <line num="74" type="stmt" count="2"/>
-      <line num="76" type="stmt" count="2"/>
-      <metrics loc="79" ncloc="45" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="19" coveredelements="19"/>
+      <line num="46" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="32"/>
+      <line num="48" type="stmt" count="32"/>
+      <line num="49" type="stmt" count="32"/>
+      <line num="57" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="59" type="stmt" count="8"/>
+      <line num="67" type="method" name="getSuit" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="69" type="stmt" count="2"/>
+      <line num="77" type="method" name="asString" visibility="public" complexity="2" crap="2" count="7"/>
+      <line num="80" type="stmt" count="7"/>
+      <line num="81" type="stmt" count="6"/>
+      <line num="84" type="stmt" count="2"/>
+      <metrics loc="87" ncloc="48" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Deck.php">
       <class name="App\Card\Deck" namespace="global">
@@ -334,47 +326,13 @@
       <line num="125" type="stmt" count="0"/>
       <metrics loc="128" ncloc="107" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="38" coveredelements="0"/>
     </file>
-    <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/ProductController.php">
-      <class name="App\Controller\ProductController" namespace="global">
-        <metrics complexity="8" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="36" coveredelements="0"/>
+    <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/MetricsController.php">
+      <class name="App\Controller\MetricsController" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
       </class>
-      <line num="14" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="25" type="method" name="createProduct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="47" type="method" name="showAllProduct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="51" type="stmt" count="0"/>
-      <line num="53" type="stmt" count="0"/>
-      <line num="59" type="method" name="showProductById" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="63" type="stmt" count="0"/>
-      <line num="64" type="stmt" count="0"/>
-      <line num="66" type="stmt" count="0"/>
-      <line num="73" type="method" name="deleteProductById" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="77" type="stmt" count="0"/>
-      <line num="78" type="stmt" count="0"/>
-      <line num="80" type="stmt" count="0"/>
-      <line num="81" type="stmt" count="0"/>
-      <line num="82" type="stmt" count="0"/>
-      <line num="86" type="stmt" count="0"/>
-      <line num="87" type="stmt" count="0"/>
-      <line num="89" type="stmt" count="0"/>
-      <line num="95" type="method" name="updateProduct" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="100" type="stmt" count="0"/>
-      <line num="101" type="stmt" count="0"/>
-      <line num="103" type="stmt" count="0"/>
-      <line num="104" type="stmt" count="0"/>
-      <line num="105" type="stmt" count="0"/>
-      <line num="109" type="stmt" count="0"/>
-      <line num="110" type="stmt" count="0"/>
-      <line num="112" type="stmt" count="0"/>
-      <metrics loc="115" ncloc="97" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="36" coveredelements="0"/>
+      <line num="22" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <metrics loc="28" ncloc="20" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/Report.php">
       <class name="App\Controller\Report" namespace="global">
@@ -442,24 +400,6 @@
       <line num="139" type="stmt" count="0"/>
       <metrics loc="142" ncloc="142" classes="1" methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="42" coveredelements="0"/>
     </file>
-    <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Entity/Product.php">
-      <class name="App\Entity\Product" namespace="global">
-        <metrics complexity="5" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
-      </class>
-      <line num="22" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="27" type="method" name="getName" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="32" type="method" name="setName" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="39" type="method" name="getValue" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="44" type="method" name="setValue" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="48" type="stmt" count="0"/>
-      <metrics loc="51" ncloc="51" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
-    </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Kernel.php">
       <class name="App\Kernel" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -482,22 +422,6 @@
       <line num="44" type="stmt" count="0"/>
       <metrics loc="77" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Repository/ProductRepository.php">
-      <class name="App\Repository\ProductRepository" namespace="global">
-        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
-      </class>
-      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="28" type="method" name="add" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="40" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <metrics loc="77" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
-    </file>
-    <metrics files="19" loc="1555" ncloc="1154" classes="17" methods="87" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="296" coveredstatements="60" elements="383" coveredelements="83"/>
+    <metrics files="17" loc="1348" ncloc="993" classes="15" methods="74" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="245" coveredstatements="52" elements="319" coveredelements="75"/>
   </project>
 </coverage>
