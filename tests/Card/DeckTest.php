@@ -76,7 +76,7 @@ class DeckObjectTest extends TestCase
         $deck = new Deck(Card::class);
         $this->assertInstanceOf("\App\Card\Deck", $deck);
 
-        $allCards = $deck->draw(52);
+        $deck->draw(52);
 
         $this->expectException("\App\Card\DeckTooSmallException");
         $deck->draw(1);

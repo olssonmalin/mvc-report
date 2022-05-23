@@ -70,6 +70,6 @@ class TestPlayerObject extends TestCase
         $card = new Card("&hearts;", 14);
         $player->addCard([$card]);
 
-        $this->assertEquals($player->getScore(), 14);
+        $this->assertEquals($player->getScore(), $score);
     }
 }

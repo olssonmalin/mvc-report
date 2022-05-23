@@ -60,7 +60,7 @@ class BookController extends AbstractController
 
         $entityManager->persist($book);
 
-        $entityManager->flush($book);
+        $entityManager->flush();
 
         // return $this->json($result);
         return $this->redirectToRoute('book_show_all');

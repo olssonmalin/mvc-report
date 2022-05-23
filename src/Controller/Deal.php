@@ -27,7 +27,6 @@ class Deal extends AbstractController
         $session->set("deck", $session->get("deck") ?? new Deck(Card::class));
         $session->set("gameSet", $session->get("gameSet") ?? []);
         $deck = $session->get("deck");
-        $gameSet = $session->get("gameSet");
         $deck->shuffle();
         try {
             $gameSet = [];

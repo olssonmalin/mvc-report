@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653316751">
-  <project timestamp="1653316751">
+<coverage generated="1653318122">
+  <project timestamp="1653318122">
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="5" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
@@ -232,7 +232,7 @@
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/Deal.php">
       <class name="App\Controller\Deal" namespace="global">
-        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="23" coveredelements="0"/>
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="22" coveredelements="0"/>
       </class>
       <line num="24" type="method" name="deckDeal" visibility="public" complexity="3" crap="12" count="0"/>
       <line num="26" type="stmt" count="0"/>
@@ -240,24 +240,23 @@
       <line num="28" type="stmt" count="0"/>
       <line num="29" type="stmt" count="0"/>
       <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
       <line num="33" type="stmt" count="0"/>
       <line num="34" type="stmt" count="0"/>
       <line num="35" type="stmt" count="0"/>
       <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
       <line num="39" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="57" type="method" name="dealForm" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="56" type="method" name="dealForm" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="58" type="stmt" count="0"/>
       <line num="59" type="stmt" count="0"/>
-      <line num="60" type="stmt" count="0"/>
-      <line num="72" type="method" name="dealProcess" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="71" type="method" name="dealProcess" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="73" type="stmt" count="0"/>
       <line num="74" type="stmt" count="0"/>
-      <line num="75" type="stmt" count="0"/>
-      <line num="78" type="stmt" count="0"/>
-      <metrics loc="84" ncloc="65" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="23" coveredelements="0"/>
+      <line num="77" type="stmt" count="0"/>
+      <metrics loc="83" ncloc="64" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="22" coveredelements="0"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/Draw.php">
       <class name="App\Controller\Draw" namespace="global">
@@ -336,7 +335,7 @@
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Controller/Report.php">
       <class name="App\Controller\Report" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="12" coveredelements="0"/>
+        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="11" coveredelements="0"/>
       </class>
       <line num="14" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="16" type="stmt" count="0"/>
@@ -348,9 +347,8 @@
       <line num="39" type="stmt" count="0"/>
       <line num="40" type="stmt" count="0"/>
       <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <metrics loc="50" ncloc="41" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="12" coveredelements="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <metrics loc="49" ncloc="40" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="11" coveredelements="0"/>
     </file>
     <file name="/Users/malinolsson/dbwebb-kurser/mvc/me/report/src/Entity/Book.php">
       <class name="App\Entity\Book" namespace="global">
@@ -422,6 +420,6 @@
       <line num="44" type="stmt" count="0"/>
       <metrics loc="77" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="17" loc="1348" ncloc="993" classes="15" methods="74" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="245" coveredstatements="52" elements="319" coveredelements="75"/>
+    <metrics files="17" loc="1346" ncloc="991" classes="15" methods="74" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="243" coveredstatements="52" elements="317" coveredelements="75"/>
   </project>
 </coverage>
