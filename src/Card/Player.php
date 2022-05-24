@@ -3,7 +3,6 @@
 namespace App\Card;
 
 use App\Card\Deck;
-use App\Card\interfaces;
 
 
 /**
