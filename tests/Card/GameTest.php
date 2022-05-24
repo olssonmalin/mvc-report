@@ -14,7 +14,7 @@ class GameObjectTest extends TestCase
      */
     public function testGameInitilize()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
 
         $this->assertInstanceOf("\App\Card\Game", $game);
     }
@@ -24,7 +24,7 @@ class GameObjectTest extends TestCase
      */
     public function testGameGetCurrentPlayer()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $this->assertEquals($game->getPlayer(), $game->getCurrentPlayer());
@@ -35,7 +35,7 @@ class GameObjectTest extends TestCase
      */
     public function testGameStandChangeCurrentPlayer()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $game->stand();
@@ -48,7 +48,7 @@ class GameObjectTest extends TestCase
      */
     public function testGameGetPlayer()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $this->assertInstanceOf("\App\Card\Player", $game->getPlayer());
@@ -59,7 +59,7 @@ class GameObjectTest extends TestCase
      */
     public function testGameGetBank()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $this->assertInstanceOf("\App\Card\Player", $game->getBank());
@@ -71,7 +71,7 @@ class GameObjectTest extends TestCase
      */
     public function testGameHit()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $game->hit();
@@ -84,7 +84,7 @@ class GameObjectTest extends TestCase
      */
     public function testGamePlayerWonMoreThanBank()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $game->hit();
@@ -96,7 +96,7 @@ class GameObjectTest extends TestCase
      */
     public function testGamePlayerWonMoreThan21()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         for ($i = 0; $i < 9; $i++) {
@@ -111,7 +111,7 @@ class GameObjectTest extends TestCase
      */
     public function testGamePlayBank()
     {
-        $game = new Game(Deck::class, Player::class, Card::class);
+        $game = new Game(new Deck(Card::class), new Player, new Player);
         $this->assertInstanceOf("\App\Card\Game", $game);
 
         $game->stand();
