@@ -7,7 +7,7 @@ use App\Card\Deck;
 /**
  * Showing off a standard class with methods and properties.
  */
-class Player
+class Player implements PlayerInterface
 {
     /**
      * Holds hand of cards

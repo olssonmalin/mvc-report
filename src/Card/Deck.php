@@ -22,7 +22,7 @@ class Deck implements DeckInterface
     private $suits = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
     private $lastDrawn = [];
 
-    public function __construct($card)
+    public function __construct(CardInterface $card)
     {
         foreach ($this->suits as &$suit) {
             for ($i = 2; $i <= 14; $i++) {

@@ -40,7 +40,7 @@ class Game
      * @param Player $player
      * @param Card $card
      */
-    public function __construct($deck, $player, $card)
+    public function __construct(DeckInterface $deck, PlayerInterface $player, CardInterface $card)
     {
         $this->player = new $player();
         $this->bank = new $player();

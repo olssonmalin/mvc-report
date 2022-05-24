@@ -7,7 +7,7 @@ interface PlayerInterface
 
     public function getHand();
 
-    public function addCards(array $cards);
+    public function addCard(array $cards);
 
     public function getScore();
 }
