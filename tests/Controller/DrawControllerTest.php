@@ -9,7 +9,7 @@ class DrawControllerTest extends WebTestCase
     public function testRouteDrawOne(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card/deck/draw');
+        $client->request('GET', '/card/deck/draw');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Draw');
@@ -18,7 +18,7 @@ class DrawControllerTest extends WebTestCase
     public function testDrawMany(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card/deck/draw/5');
+        $client->request('GET', '/card/deck/draw/5');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Draw');

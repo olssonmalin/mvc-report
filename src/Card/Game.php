@@ -11,21 +11,21 @@ class Game
     /**
      * Player object
      *
-     * @var Player
+     * @var PlayerInterface
      */
     private PlayerInterface $player;
 
     /**
      * Bank object
      *
-     * @var Player
+     * @var PlayerInterface
      */
     private PlayerInterface $bank;
 
     /**
      * Deck object
      *
-     * @var Deck
+     * @var DeckInterface
      */
     private DeckInterface $deck;
 

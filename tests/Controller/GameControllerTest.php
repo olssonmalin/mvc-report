@@ -9,7 +9,7 @@ class GameControllerTest extends WebTestCase
     public function testRouteGame(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/game');
+        $client->request('GET', '/game');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Game');
@@ -18,7 +18,7 @@ class GameControllerTest extends WebTestCase
     public function testRouteDoc(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/game/doc');
+        $client->request('GET', '/game/doc');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Documentation');
@@ -27,7 +27,7 @@ class GameControllerTest extends WebTestCase
     public function testRoute21(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/game/start');
+        $client->request('GET', '/game/start');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', '21');
