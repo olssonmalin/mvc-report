@@ -13,28 +13,28 @@ class Game
      *
      * @var Player
      */
-    private Player $player;
+    private PlayerInterface $player;
 
     /**
      * Bank object
      *
      * @var Player
      */
-    private Player $bank;
+    private PlayerInterface $bank;
 
     /**
      * Deck object
      *
      * @var Deck
      */
-    private Deck $deck;
+    private DeckInterface $deck;
 
     /**
      * Player object of the current player (player or bank)
      *
-     * @var Player
+     * @var PlayerInterface
      */
-    private Player $currentPlayer;
+    private PlayerInterface $currentPlayer;
 
 
     /**
@@ -107,9 +107,9 @@ class Game
     /**
      * Gets player object
      *
-     * @return Player
+     * @return PlayerInterface
      */
-    public function getPlayer(): Player
+    public function getPlayer(): PlayerInterface
     {
         return $this->player;
     }
@@ -117,9 +117,9 @@ class Game
     /**
      * Gets bank player object
      *
-     * @return Player
+     * @return PlayerInterface
      */
-    public function getBank(): Player
+    public function getBank(): PlayerInterface
     {
         return $this->bank;
     }
@@ -127,9 +127,9 @@ class Game
     /**
      * Gets currentplayer player object
      *
-     * @return Player
+     * @return PlayerInterface
      */
-    public function getCurrentPlayer(): Player
+    public function getCurrentPlayer(): PlayerInterface
     {
         return $this->currentPlayer;
     }
