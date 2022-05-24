@@ -46,7 +46,7 @@ class Player
      * @param Card $cards
      * @return void
      */
-    public function addCard($cards = [new Card("joker", 0)]): void
+    public function addCard(array $cards = [new Card("joker", 0)]): void
     {
         foreach ($cards as &$card) {
             array_push($this->hand, $card);

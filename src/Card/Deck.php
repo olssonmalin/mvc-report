@@ -5,7 +5,7 @@ namespace App\Card;
 /**
  * Showing off a standard class with methods and properties.
  */
-class Deck
+class Deck implements DeckInterface
 {
     /**
      * Array holding card objects

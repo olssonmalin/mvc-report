@@ -7,7 +7,7 @@ use App\Card\Card;
 /**
  * Showing off a standard class with methods and properties.
  */
-class Card
+class Card implements CardInterface
 {
     /**
      * Holds cards suit
@@ -28,9 +28,8 @@ class Card
     *
     *@var array
     */
-    private $JDKA = [
+    private $stringCards = [
         0 => "JOKER",
-        10 => "10", 
         11 => "J",
         12 => "D",
         13 => "K",
@@ -77,8 +76,8 @@ class Card
     public function asString(): string
     {
 
-       if (array_key_exists($this->value, $this->JDKA)) {
-           return $this->JDKA[$this->value];
+       if (array_key_exists($this->value, $this->stringCards)) {
+           return $this->stringCards[$this->value];
        }
 
         return "$this->value";
