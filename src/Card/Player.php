@@ -3,6 +3,8 @@
 namespace App\Card;
 
 use App\Card\Deck;
+use App\Card\interfaces;
+
 
 /**
  * Showing off a standard class with methods and properties.

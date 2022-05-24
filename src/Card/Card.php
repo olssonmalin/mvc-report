@@ -2,7 +2,7 @@
 
 namespace App\Card;
 
-use App\Card\Card;
+use App\Card\CardInterface;
 
 /**
  * Showing off a standard class with methods and properties.

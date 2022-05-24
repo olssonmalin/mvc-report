@@ -45,14 +45,15 @@ class GameController extends AbstractController
      * @Route("/game/start", name="startGame", methods={"GET", "HEAD"})
      */
     public function startGame(SessionInterface $session): Response
-    {
+    {   
+        $deck = new Deck(Card::class);
+        $player = new Player();
+        $bank = new Player();
+
         $title = '21';
-        $session->set("game", $session->get("game") ?? new Game(Deck::class, Player::class, Card::class));
+        $session->set("game", $session->get("game") ?? new Game($deck, $player, $bank));
         $game = $session->get("game");
 
-        // $game = new Game(Deck::class, Player::class, Card::class);
-
-        // $game->hit();
         $gameOver = false;
         $playerhand = $game->getPlayer()->getHand();
         $bankHand = $game->getBank()->getHand();
@@ -81,7 +82,6 @@ class GameController extends AbstractController
         $title = '21';
         $game = $session->get("game");
 
-        // $game = new Game(Deck::class, Player::class, Card::class);
 
         $game->stand();
 
@@ -109,8 +109,12 @@ class GameController extends AbstractController
      * @Route("/game/reset", name="resetGame", methods={"GET", "HEAD"})
      */
     public function resetGame(SessionInterface $session): Response
-    {
-        $session->set("game", new Game(Deck::class, Player::class, Card::class));
+    {   
+        $deck = new Deck(Card::class);
+        $player = new Player();
+        $bank = new Player();
+
+        $session->set("game", new Game($deck , $player, $bank));
         return $this->redirectToRoute('startGame');
     }
 

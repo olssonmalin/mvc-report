@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Card;
+use App\Card\CardInterface;
+use App\Card\DeckInterface;
+use App\Card\PlayerInterface;
+
 
 class Game
 {
@@ -36,15 +40,19 @@ class Game
     /**
      * Constructs game (21) object
      *
-     * @param Deck $deck
-     * @param Player $player
-     * @param Card $card
+     * @param DeckInterface $deck
+     * @param PlayerInterface $player
+     * @param CardInterface $card
      */
-    public function __construct(DeckInterface $deck, PlayerInterface $player, CardInterface $card)
+    public function __construct(DeckInterface $deck, PlayerInterface $player, PlayerInterface $bank)
     {
-        $this->player = new $player();
-        $this->bank = new $player();
-        $this->deck = new $deck($card);
+        // $this->player = new $player();
+        // $this->bank = new $player();
+        // $this->deck = new $deck($card);
+
+        $this->player = $player;
+        $this->bank = $bank;
+        $this->deck = $deck;
         $this->currentPlayer = $this->player;
     }
 
