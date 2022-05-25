@@ -1,0 +1,33 @@
+{% apply markdown_to_html %}
+    ## Kmom06
+
+    **Hur uppfattade du verktyget phpmetrics och fann du några
+    särskilda bitar mer värdefulla än andra? Var det några särskilda metrics eller bilder du uppskattade?**
+    
+    Jag tycker verktyget gav många olika bra mätvärden. Sidan med olika värden för coupling gav mycket insikt till hur couplingen var i min kod. 
+    Vissa mätvärden var dock svåra att hitta förklaring för. Det fanns få tydliga förklaringar för specifika mätresultat i dokumentationen.
+    Object oriented metrics gav också tydliga resultat och jag uppskattade att man kan jämföra med storleken på klassen.
+
+    **Berätta hur det gick att integrera med Scrutinizer och vilken är
+    din första känsla av verktyget och dess badges? Vilken kodtäckning och
+    kodkvalitet fick du efter första bygget?**
+
+    Jag hade lite problem i början med att scrutinizer skulle lyckas köra den första inspektionen. Efter att ta bort några filer som hade genererats automatisk av node fick jag till slut ett resultat.
+    Det första resultatet gav väldigt många "fel". Kodkvaliteten var 6.15. Efter att ah kollat lite på de olika mätvärderna såg jag att de "värsta" klasserna var från tools-katalogen. Jag hade då rätt svårt att hitta de klasser jag hade skrivit.
+    Därför valde jag att utesluta scrutinizer att analysera denna katalog. När jag hade gjort det fick jag kodkvalitén 10. Det blev mycket lättare att analysera värderna efter det och göra förbättringar.
+    
+    **Hur är din egen syn på kodkvalitet, berätta lite om den? Tror du
+    man kan man påvisa kodkvalitet i någon viss mån med badges eller vad
+    tror du?**
+
+    Jag ser kodkvalité som relativt. Det är så starkt beroende på sammanhanget och vad som är viktigt för det projekt man jobbar med. Personligen är det också vad jag anser att jag kan förbättra. 
+    Vissa delar har jag inte bra kunskap nog för att kunna förbättra men detta har också gjort att jag har lärt mig mer om hur jag kan förbättra min kod efter lite efterforskning om vad mätvärderna betyder. 
+    Badges kan visa en viss kodkvalite men jag tror att det kan också vara bra att ta de med en nypa salt. Ett projekt med sämre resultat kan funka lika bra som ett projekt med bättre resultat. Däremot tänker jag att ett projekt har badges visar ändå på att
+    skaper har kodkvalité i åtanke och att det är något positivt. Detta kan betyda att skaparen tänker på hur koden är skriven och att den har tester. 
+    
+    **Vilken är din TIL för detta kmom?**
+
+    Mitt TIL detta kmom är att det alltid finns något man kan förbättra med sin kod och att förbättringar tar tid och eftertanke. Det finns inte så mycket rätt och fel utan att det är relativt till vad man eftersträvar.
+
+
+{% endapply %}
