@@ -1,4 +1,4 @@
-Utifrån att se resultaten från Scrutinizer finns några delar jag vill ändra i min kod som förhoppningsvis kan förbättra resultatet från dessa rapporter något.
+Utifrån att se resultaten från Scrutinizer och phpMetrics finns några delar jag vill ändra i min kod som förhoppningsvis kan förbättra resultatet från dessa rapporter något.
 
 #### Issues
 
