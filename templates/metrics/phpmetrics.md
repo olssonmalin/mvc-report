@@ -1,13 +1,13 @@
 ### Överblick
 
-<img src="/img/phpmetrics/overview.png" class="metrics-img">
+<img src="../img/phpmetrics/overview.png" class="metrics-img">
 
 ### Coverage
 
 I min phpMetrics-raport har jag inget värde för coverage. Se Scrutinizer.
 
 ### Complexity
-<img src="/img/phpmetrics/complexity.png">
+<img src="../img/phpmetrics/complexity.png">
 
 I bilden ovanför är en tabell över klasserna i mitt projekt. Tabellen är sorterad efter Class cyclomatic complexity. 
 Högst upp finns klassen Card. Card har en total komplexitet på 6. Vi kan också se att den metod med mest komplexitet också har värdet 6 under columnen Max method cycl. Detta innebär alltså att klassens komplexitet kommer från denna metod. Metoden är asString i card-klassen. Den innehåller en del if-satser för att avgöra vad som ska returneras för att få kortets värde som en sträng. Har kortet värde 10 returneras "10" men är det ett klätt kort så returneras den korrekta bokstaven istället för värdet som sträng t.ex värde 13 returneras "K" efter som det är det värde kung har. Här går det att miska complexiteten och byta ut if-satserna till en annan lösning. 
@@ -18,8 +18,8 @@ Andra intressanta värden är WMC och Relative system complexity för BookContol
 
 ### Coupling
 <div class="text-img-container">
-<img src="/img/phpmetrics/coupling-afferent.png" class="metrics-img">
-<img src="/img/phpmetrics/coupling-efferent.png" class="metrics-img">
+<img src="../img/phpmetrics/coupling-afferent.png" class="metrics-img">
+<img src="../img/phpmetrics/coupling-efferent.png" class="metrics-img">
 </div>
 
 
@@ -33,20 +33,20 @@ Jag har svårt att komma på hur jag ska kunna ändra de mätvärden som är hö
 
 
 ### Cohesion
-<img src="/img/phpmetrics/lcom.png">
+<img src="../img/phpmetrics/lcom.png">
 
 
 Bilden oven visar en tabell över klasserna sorterad efter högst LCOM-värde. Det högsta värdet i tabellen är 2 som är främst gemensamt för controller-klasserna. Detta är något som kan förbättras genom att lyfta ur en del metoder/routrar till en annan klass för att dela upp ansvaret en del. Sedan finns player-klassen också högt upp med LCOM 2. Detta är kanske något som skulle förbättras genom att förendra lite hur flödet går mellan klasserna game, deck och player. 
 
 
 ### Violations och annat intressant
-<img src="/img/phpmetrics/violations.png">
+<img src="../img/phpmetrics/violations.png">
 
 I PHPMetrics finns en sida för violations. Jag har två violations för paketen App/Card och App/Entity. Detta är ett fel om att paketet inte följer Stable Abstractions Principle. Jag försöker läsa på om vad felet beror på men har svårt att hitta underlag för hur jag ska kunna lösa problemet. 
 
 
 <div class="text-img-container">
-<img src="/img/phpmetrics/class-rank.png" class="metrics-img-vertical">
+<img src="../img/phpmetrics/class-rank.png" class="metrics-img-vertical">
 
 Ett instressant värde vi får av PHPMetrics är class-rank. Detta är ett uppskattat värde på hur vikigt klassen är. Jag kan se att min Card-klass är högst upp på denna lista. Detta beror på att den används många gånger i Deck. Card är den minsta beståndsdel i mitt spel. Kortleken består av 52 kort och dessa är just Card-object därför kan jag förstå att den klassen hamnar högt upp på denna lista över class rank. 
 

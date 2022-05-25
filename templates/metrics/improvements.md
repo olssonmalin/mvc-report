@@ -40,22 +40,22 @@ Bilderna nedan visar mätvärderna för complexity före och efter i scrutinizer
 #### Scrutinizer
 Före:
 
-<img src="/img/scrutinizer/complexity.png" class="metrics-img">
+<img src="../img/scrutinizer/complexity.png" class="metrics-img">
 
 Efter:
 
-<img src="/img/scrutinizer/result-complexity.png" class="metrics-img">
+<img src="../img/scrutinizer/result-complexity.png" class="metrics-img">
 
 
 #### PhpMetrics
 
 Före:
 
-<img src="/img/phpmetrics/complexity.png" class="metrics-img">
+<img src="../img/phpmetrics/complexity.png" class="metrics-img">
 
 Efter:
 
-<img src="/img/phpmetrics/result-complexity.png" class="metrics-img">
+<img src="../img/phpmetrics/result-complexity.png" class="metrics-img">
 
 
 Nästa Bilder är kopplade tilld e ändringar som gjordes för att få bort de issues jag hade i scrutinizer. Eftersom dessa delvis rörde coupling också så hoppades jag på att förbättra de siffrorna i PhpMetrics men de blev en aning högre. Däremot såg jag att class rank hade ändrats en del som jag tror är kopplad till de ändringar jag gjorde i koden. Class rank är kopplat till ineraktioner mellan klasser och är ett mått på hur viktig en klass är. Jag kan inte hitta så mcyekt mer om detta mätvärde. Av denna förklaring skulle detta kunna vara något som reflekterar den lösare koppling jag ville uppnå med mina ändringar även om det inte visas i afferent eller efferent coupling. 
@@ -64,22 +64,22 @@ Nästa Bilder är kopplade tilld e ändringar som gjordes för att få bort de i
 #### Issues i Scrutinizer
 Före:
 
-<img src="/img/scrutinizer/issues.png" class="metrics-img">
+<img src="../img/scrutinizer/issues.png" class="metrics-img">
 
 Efter:
 
-<img src="/img/scrutinizer/result-issues.png" class="metrics-img">
+<img src="../img/scrutinizer/result-issues.png" class="metrics-img">
 
 
 #### PhpMetrics Class rank
 
 Före:
 
-<img src="/img/phpmetrics/class-rank.png" class="metrics-img">
+<img src="../img/phpmetrics/class-rank.png" class="metrics-img">
 
 Efter:
 
-<img src="/img/phpmetrics/result-class-rank.png" class="metrics-img">
+<img src="../img/phpmetrics/result-class-rank.png" class="metrics-img">
 
 
 #### Coverage
@@ -87,11 +87,11 @@ Nedan finns bilderna för coverage i scrutinizer före och efter ändringar.
 
 Före:
 
-<img src="/img/scrutinizer/coverage.png" class="metrics-img">
+<img src="../img/scrutinizer/coverage.png" class="metrics-img">
 
 Efter:
 
-<img src="/img/scrutinizer/result-coverage.png" class="metrics-img">
+<img src="../img/scrutinizer/result-coverage.png" class="metrics-img">
 
 
 Här är också de seanste badges som genereas av Scrutinizer:
