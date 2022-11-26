@@ -47,265 +47,40 @@ class ProjController extends AbstractController
             $years[] = $yearObject->getId();
         }
 
-        // One per region
-        $colors = ['#004B23', '#03045E', '#590D22', '#800F2F', '#A4133C',
-         '#C9184A', '#FF4D6D', '#FF758F', '#FF8FA3', '#023E8A', '#0077B6', 
-         '#0096C7', '#00B4D8', '#48CAE4', '#ADE8F4', '#006400', '#007200', '#008000', '#38B000', '#70E000', '#9EF01A'];
-        
         // Competed resideces multiple recidence houses
-        $compResMultichart = $chartBuilder->createChart(Chart::TYPE_LINE);
         
         $completedResidences = $completedResidencesRepository->findBy(['type' => 'flerbostadshus']);
-        $datasetsCRMulti = [];
-        $crMultiLabelData = [];
-        foreach ($completedResidences as $crObject) {
-            // Create an array with region => amount[]
-            $crMultiLabelData[$crObject->getRegion()->getName()][] = $crObject->getAmount();
-        }
-        $colorIndex = 0;
-        foreach ($crMultiLabelData as $name => $data) {
-            $datasetsCRMulti[] = ['label' => $name, 'data' => $data, 'borderColor' => $colors[$colorIndex]];
-            $colorIndex++;
-        }
-        $compResMultichart->setData([
-            'labels' => $years,
-            'datasets' => $datasetsCRMulti,
-        ]);
-
-        $compResMultichart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
 
         // Competed resideces small houses
-        $compResSmallchart = $chartBuilder->createChart(Chart::TYPE_LINE);
         
         $completedResidencesSmall = $completedResidencesRepository->findBy(['type' => 'småhus']);
-        $datasetsCRSmall = [];
-        $crSmallLabelData = [];
-        foreach ($completedResidencesSmall as $crObject) {
-            // Create an array with region => amount[]
-            $crSmallLabelData[$crObject->getRegion()->getName()][] = $crObject->getAmount();
-        }
-        $colorIndex = 0;
-        foreach ($crSmallLabelData as $name => $data) {
-            $datasetsCRSmall[] = ['label' => $name, 'data' => $data, 'borderColor' => $colors[$colorIndex]];
-            $colorIndex++;
-        }
-        $compResSmallchart->setData([
-            'labels' => $years,
-            'datasets' => $datasetsCRSmall,
-        ]);
 
-        $compResSmallchart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
-
-        $colors = ['#15616d', '#001524', '#ff7d00', '#78290f'];
         // Population and distance to station (Urban area)
-        $popStationUrbanChart = $chartBuilder->createChart(Chart::TYPE_BAR);
         
-        $completedResidencesSmall = $populationStationRepository->findBy(['urban' => 'inom tätort']);
-        $datasetsPSurban = [];
-        $psUrbanDataRegion = [];
-        // Stack year
-        // Dataset meters
-        // Labels region
-        foreach ($completedResidencesSmall as $psObject) {
-            $psUrbanDataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
-        }
-        $regions = [];
-        $psUrbanData = [];
-        foreach ($psUrbanDataRegion as $name => $data) {
-            $regions[] = $name;
-            foreach ($data as $year => $data) {
-                $prevPop = 0;
-                foreach ($data as $meters => $population) {
-                    $psUrbanData[$meters . 'm'][$year][] = $population - $prevPop;
-                    $prevPop = $population;
-                }
-            }
-        }
-        $colorIndex = 0;
-        $datasetsPSurban = [];
-        foreach ($psUrbanData as $meters => $data) {
-            foreach ($data as $year => $data) {
-                $datasetsPSurban[] = ['label' => $meters . ' ' . $year, 'data' => $data, 'stack' => $year, 'backgroundColor' => $colors[$colorIndex]];
-            }
-            $colorIndex++;
-        }
-        $popStationUrbanChart->setData([
-            'labels' => $regions,
-            'datasets' => $datasetsPSurban,
-        ]);
-
-        $popStationUrbanChart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
+        $popStationUrban = $populationStationRepository->findBy(['urban' => 'inom tätort']);
 
         // Population and distence to station non-urban
-        $popStationNonUrbanChart = $chartBuilder->createChart(Chart::TYPE_BAR);
         
-        $completedResidencesSmall = $populationStationRepository->findBy(['urban' => 'utanför tätort']);
-        $datasetsPSurban = [];
-        $psUrbanDataRegion = [];
-        // Stack year
-        // Dataset meters
-        // Labels region
-        foreach ($completedResidencesSmall as $psObject) {
-            $psUrbanDataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
-        }
-        $regions = [];
-        $psUrbanData = [];
-        foreach ($psUrbanDataRegion as $name => $data) {
-            $regions[] = $name;
-            foreach ($data as $year => $data) {
-                $prevPop = 0;
-                foreach ($data as $meters => $population) {
-                    $psUrbanData[$meters . 'm'][$year][] = $population - $prevPop;
-                    $prevPop = $population;
-                }
-            }
-        }
-        $colorIndex = 0;
-        $datasetsPSurban = [];
-        foreach ($psUrbanData as $meters => $data) {
-            foreach ($data as $year => $data) {
-                $datasetsPSurban[] = ['label' => $meters . ' ' . $year, 'data' => $data, 'stack' => $year, 'backgroundColor' => $colors[$colorIndex]];
-            }
-            $colorIndex++;
-        }
-        $popStationNonUrbanChart->setData([
-            'labels' => $regions,
-            'datasets' => $datasetsPSurban,
-        ]);
-
-        $popStationNonUrbanChart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
-
-        // Residences and distance to station newly built
-        $resStationNewChart = $chartBuilder->createChart(Chart::TYPE_BAR);
+        $popStationNonUrban = $populationStationRepository->findBy(['urban' => 'utanför tätort']);
         
-        $completedResidencesSmall = $residenceStationRepository->findBy(['stock' => 'nytillkomna bostäder']);
-        $datasetsPSurban = [];
-        $psUrbanDataRegion = [];
-        // Stack year
-        // Dataset meters
-        // Labels region
-        foreach ($completedResidencesSmall as $psObject) {
-            $psUrbanDataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
-        }
-        $regions = [];
-        $psUrbanData = [];
-        foreach ($psUrbanDataRegion as $name => $data) {
-            $regions[] = $name;
-            foreach ($data as $year => $data) {
-                $prevPop = 0;
-                foreach ($data as $meters => $population) {
-                    $psUrbanData[$meters . 'm'][$year][] = $population - $prevPop;
-                    $prevPop = $population;
-                }
-            }
-        }
-        $colorIndex = 0;
-        $datasetsPSurban = [];
-        foreach ($psUrbanData as $meters => $data) {
-            foreach ($data as $year => $data) {
-                $datasetsPSurban[] = ['label' => $meters . ' ' . $year, 'data' => $data, 'stack' => $year, 'backgroundColor' => $colors[$colorIndex]];
-            }
-            $colorIndex++;
-        }
-        $resStationNewChart->setData([
-            'labels' => $regions,
-            'datasets' => $datasetsPSurban,
-        ]);
-
-        $resStationNewChart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
-
-        // Residences and distance to station all
-        $resStationAllChart = $chartBuilder->createChart(Chart::TYPE_BAR);
+        $resStationNew = $residenceStationRepository->findBy(['stock' => 'nytillkomna bostäder']);
         
-        $completedResidencesSmall = $residenceStationRepository->findBy(['stock' => 'samtliga bostäder']);
-        $datasetsPSurban = [];
-        $psUrbanDataRegion = [];
-        // Stack year
-        // Dataset meters
-        // Labels region
-        foreach ($completedResidencesSmall as $psObject) {
-            $psUrbanDataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
-        }
-        $regions = [];
-        $psUrbanData = [];
-        foreach ($psUrbanDataRegion as $name => $data) {
-            $regions[] = $name;
-            foreach ($data as $year => $data) {
-                $prevPop = 0;
-                foreach ($data as $meters => $population) {
-                    $psUrbanData[$meters . 'm'][$year][] = $population - $prevPop;
-                    $prevPop = $population;
-                }
-            }
-        }
-        $colorIndex = 0;
-        $datasetsPSurban = [];
-        foreach ($psUrbanData as $meters => $data) {
-            foreach ($data as $year => $data) {
-                $datasetsPSurban[] = ['label' => $meters . ' ' . $year, 'data' => $data, 'stack' => $year, 'backgroundColor' => $colors[$colorIndex]];
-            }
-            $colorIndex++;
-        }
-        $resStationAllChart->setData([
-            'labels' => $regions,
-            'datasets' => $datasetsPSurban,
-        ]);
-
-        $resStationAllChart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
+        $resStationAll = $residenceStationRepository->findBy(['stock' => 'samtliga bostäder']);
 
         // ['label' => 'Cookies eaten 🍪', 'data' => $years],
         // ['label' => 'Km walked 🏃‍♀️', 'data' => [10, 15, 4, 3, 25, 41, 25]],
 
         return $this->render('proj/index.html.twig', [
             'title' => $title,
-            'compResMultiChart' => $compResMultichart,
-            'compResSmallChart' => $compResSmallchart,
-            'popStationUrbanChart' => $popStationUrbanChart,
-            'popStationNonUrbanChart' => $popStationNonUrbanChart,
-            'resStationNewChart' => $resStationNewChart,
-            'resStationAllChart' => $resStationAllChart,
+            'completedResidences' => $completedResidences,
+            'completedResidencesSmall' => $completedResidencesSmall,
+            'popStationUrban' => $popStationUrban,
+            'popStationNonUrban' => $popStationNonUrban,
+            'resStationNew' => $resStationNew,
+            'resStationAll' => $resStationAll,
+            'chartBuilder' => $chartBuilder,
+            'years' => $years,
+
         ]);
         // return $this->json($psUrbanData);
     }

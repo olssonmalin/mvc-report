@@ -2,6 +2,7 @@
 
 {% block body %}
 <h1>About</h1>
+{{ name("Malin") }}
 {% include 'proj/content/about.html.twig' %}
 
 <a class="button" href="{{ path("proj reset") }}">Återställ databas</a>

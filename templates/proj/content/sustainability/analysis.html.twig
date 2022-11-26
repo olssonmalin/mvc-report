@@ -8,11 +8,12 @@ Population och dess avstånd till hållplats (utanför och inom tätort) och bos
 
 <h4>Färdigställda bostader (flerbostadshus)</h4>
 
-{{ render_chart(compResMultiChart) }}
+{{ render_chart(getComResChart(completedResidences, years, chartBuilder)) }}
 
 <h4>Färdigställda bostader (småhus)</h4>
 
-{{ render_chart(compResSmallChart) }}
+{{ render_chart(getComResChart(completedResidencesSmall, years, chartBuilder)) }}
+
 
 {% apply markdown_to_html %}
 
@@ -24,7 +25,8 @@ För de län med mindre befolkningsmängd är färdigställda bostäder mer jäm
 
 <h4>Befolkning avstånd till hållplats (inom tätort)</h4>
 
-{{ render_chart(popStationUrbanChart) }}
+{{ render_chart(getStationDistChart(popStationUrban, chartBuilder)) }}
+
 
 {% apply markdown_to_html %}
 - Majoritet av befolkning i tätort bor inom 400m till en hållplats i samtliga regioner
@@ -34,7 +36,8 @@ För de län med mindre befolkningsmängd är färdigställda bostäder mer jäm
 
 <h4>Befolkning avstånd till hållplats (utanför tätort)</h4>
 
-{{ render_chart(popStationNonUrbanChart) }}
+{{ render_chart(getStationDistChart(popStationNonUrban, chartBuilder)) }}
+
 
 {% apply markdown_to_html %}
 - utanför tätort är befolkningsgruppen som har hållplats inom 2000m störst i de flesta län
@@ -44,7 +47,8 @@ För de län med mindre befolkningsmängd är färdigställda bostäder mer jäm
 
 <h4>Bostäders avstånd till hållplats (nytillkomna bostäder)</h4>
 
-{{ render_chart(resStationNewChart) }}
+{{ render_chart(getStationDistChart(resStationNew, chartBuilder)) }}
+
 
 {% apply markdown_to_html %}
 - majoriteten av nytillkomna bostäder i samtliga län ligger inom 400m till en hållplats
@@ -52,7 +56,8 @@ För de län med mindre befolkningsmängd är färdigställda bostäder mer jäm
 
 <h4>Bostäders avstånd till hållplats (Samtliga bostäder)</h4>
 
-{{ render_chart(resStationAllChart) }}
+{{ render_chart(getStationDistChart(resStationAll, chartBuilder)) }}
+
 
 {% apply markdown_to_html %}
 - inget som sticker ut???
