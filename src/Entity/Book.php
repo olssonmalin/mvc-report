@@ -20,7 +20,7 @@ class Book
     #[ORM\Column(type: 'string', length: 255)]
     private $author;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'string', length: 255)]
     private $ISBN;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]

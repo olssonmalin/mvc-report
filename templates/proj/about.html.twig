@@ -1,0 +1,8 @@
+{% extends 'proj/base.html.twig' %}
+
+{% block body %}
+<h1>About</h1>
+{% include 'proj/content/about.html.twig' %}
+
+<a class="button" href="{{ path("proj reset") }}">Återställ databas</a>
+{% endblock %}

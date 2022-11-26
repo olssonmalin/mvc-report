@@ -1,0 +1,60 @@
+{% apply markdown_to_html %}
+### Analys och data 
+
+Den data som presenteras är hämtad från SCB. Det är statistik över färdigställda bostäder (flerbostadshus och småhus), 
+Population och dess avstånd till hållplats (utanför och inom tätort) och bostäders avstånd till hållplatser 
+(nytillkomna och samtliga bostäder) i Sveriges län.
+{% endapply %}
+
+<h4>Färdigställda bostader (flerbostadshus)</h4>
+
+{{ render_chart(compResMultiChart) }}
+
+<h4>Färdigställda bostader (småhus)</h4>
+
+{{ render_chart(compResSmallChart) }}
+
+{% apply markdown_to_html %}
+
+Färdigställda bostäder ser olika ut beroende på vilket län man kollar på. Större regioner så som Stockholm, 
+Skåne och Västra götaland kan vi se stora skillnader i antalet färdigställda bostäder mellan olika år.
+För de län med mindre befolkningsmängd är färdigställda bostäder mer jämn mellan olika år.
+
+{% endapply %}
+
+<h4>Befolkning avstånd till hållplats (inom tätort)</h4>
+
+{{ render_chart(popStationUrbanChart) }}
+
+{% apply markdown_to_html %}
+- Majoritet av befolkning i tätort bor inom 400m till en hållplats i samtliga regioner
+- Större andel befolkning boende i tätort har hållplats inom 2000m i länen skåne och västa götalands län jämfört med stockholms län
+{% endapply %}
+
+
+<h4>Befolkning avstånd till hållplats (utanför tätort)</h4>
+
+{{ render_chart(popStationNonUrbanChart) }}
+
+{% apply markdown_to_html %}
+- utanför tätort är befolkningsgruppen som har hållplats inom 2000m störst i de flesta län
+- västra götaland har högs befolkning utanför tätort
+- befolkning som bor utanför tätort i skånes län och har hållplats inom 2000m är nästan dubbelt så många som de som har hållplats inom 1000m
+{% endapply %}
+
+<h4>Bostäders avstånd till hållplats (nytillkomna bostäder)</h4>
+
+{{ render_chart(resStationNewChart) }}
+
+{% apply markdown_to_html %}
+- majoriteten av nytillkomna bostäder i samtliga län ligger inom 400m till en hållplats
+{% endapply %}
+
+<h4>Bostäders avstånd till hållplats (Samtliga bostäder)</h4>
+
+{{ render_chart(resStationAllChart) }}
+
+{% apply markdown_to_html %}
+- inget som sticker ut???
+{% endapply %}
+

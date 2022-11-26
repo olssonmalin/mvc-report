@@ -11,11 +11,10 @@
 <div class="example-wrapper">
 
     <h1> {{ title }}</h1>
-    
     <div class="book-item-container">
     {% if (books != null)%}
     {% for book in books %}
-        <a href="{{ path("book_by_id", { 'id': book.id }) }}">
+        <a href="{{ path("book_by_id", {'id': book.id }) }}">
             <div class="book-item">
                 <p>{{ book.title }}</p>
                 <p>{{ book.author }}</p>
