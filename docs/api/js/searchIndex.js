@@ -48,12 +48,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructs\u0020a\u0020deck\u0020of\u0020cards",
             "url": "classes/App-Card-Deck.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
-            "summary": "Gets\u0020card\u0020deck",
+            "summary": "Gets\u0020deck\u0020of\u0020cards",
             "url": "classes/App-Card-Deck.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003AtoString\u0028\u0029",
@@ -73,7 +73,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003AgetLastDrawn\u0028\u0029",
             "name": "getLastDrawn",
-            "summary": "",
+            "summary": "Returns\u0020last\u0020drawn\u0020cards",
             "url": "classes/App-Card-Deck.html#method_getLastDrawn"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003Adraw\u0028\u0029",
@@ -93,7 +93,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003A\u0024lastDrawn",
             "name": "lastDrawn",
-            "summary": "",
+            "summary": "Last\u0020drawn\u0020card",
             "url": "classes/App-Card-Deck.html#property_lastDrawn"
         },                {
             "fqsen": "\\App\\Card\\Deck2",
@@ -573,17 +573,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CardInterface\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "Get\u0020value\u0020of\u0020card",
             "url": "classes/App-Card-CardInterface.html#method_getValue"
         },                {
             "fqsen": "\\App\\Card\\CardInterface\u003A\u003AgetSuit\u0028\u0029",
             "name": "getSuit",
-            "summary": "",
+            "summary": "get\u0020suit\u0020of\u0020card",
             "url": "classes/App-Card-CardInterface.html#method_getSuit"
         },                {
             "fqsen": "\\App\\Card\\CardInterface\u003A\u003AasString\u0028\u0029",
             "name": "asString",
-            "summary": "",
+            "summary": "Coverts\u0020value\u0020as\u0020string",
             "url": "classes/App-Card-CardInterface.html#method_asString"
         },                {
             "fqsen": "\\App\\Card\\DeckInterface",
@@ -593,32 +593,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckInterface\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
-            "summary": "",
+            "summary": "Get\u0020Deck\u0020of\u0020cards",
             "url": "classes/App-Card-DeckInterface.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckInterface\u003A\u003AtoString\u0028\u0029",
             "name": "toString",
-            "summary": "",
+            "summary": "To\u0020get\u0020cards\u0020values\u0020and\u0020suits\u0020in\u0020array",
             "url": "classes/App-Card-DeckInterface.html#method_toString"
         },                {
             "fqsen": "\\App\\Card\\DeckInterface\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
-            "summary": "",
+            "summary": "Shuffles\u0020deck",
             "url": "classes/App-Card-DeckInterface.html#method_shuffle"
         },                {
             "fqsen": "\\App\\Card\\DeckInterface\u003A\u003AgetLen\u0028\u0029",
             "name": "getLen",
-            "summary": "",
+            "summary": "Gets\u0020number\u0020of\u0020cards\u0020in\u0020deck",
             "url": "classes/App-Card-DeckInterface.html#method_getLen"
         },                {
             "fqsen": "\\App\\Card\\DeckInterface\u003A\u003AgetLastDrawn\u0028\u0029",
             "name": "getLastDrawn",
-            "summary": "",
+            "summary": "Returns\u0020last\u0020drawn\u0020cards",
             "url": "classes/App-Card-DeckInterface.html#method_getLastDrawn"
         },                {
             "fqsen": "\\App\\Card\\DeckInterface\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Draws\u0020given\u0020number\u0020of\u0020cards\u0020from\u0020deck",
             "url": "classes/App-Card-DeckInterface.html#method_draw"
         },                {
             "fqsen": "\\App\\Card\\PlayerInterface",
@@ -628,17 +628,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\PlayerInterface\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "",
+            "summary": "Gets\u0020players\u0020current\u0020hand\u0020of\u0020cards",
             "url": "classes/App-Card-PlayerInterface.html#method_getHand"
         },                {
             "fqsen": "\\App\\Card\\PlayerInterface\u003A\u003AaddCard\u0028\u0029",
             "name": "addCard",
-            "summary": "",
+            "summary": "Adds\u0020card\u0028s\u0029\u0020to\u0020players\u0020hand",
             "url": "classes/App-Card-PlayerInterface.html#method_addCard"
         },                {
             "fqsen": "\\App\\Card\\PlayerInterface\u003A\u003AgetScore\u0028\u0029",
             "name": "getScore",
-            "summary": "",
+            "summary": "Gets\u0020players\u0020score",
             "url": "classes/App-Card-PlayerInterface.html#method_getScore"
         },                {
             "fqsen": "\\App\\Controller\\MetricsController",
@@ -1231,6 +1231,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Repository-YearRepository.html#method_remove"
         },                {
+            "fqsen": "\\App\\Twig\\AppExtension",
+            "name": "AppExtension",
+            "summary": "",
+            "url": "classes/App-Twig-AppExtension.html"
+        },                {
+            "fqsen": "\\App\\Twig\\AppExtension\u003A\u003AgetFunctions\u0028\u0029",
+            "name": "getFunctions",
+            "summary": "",
+            "url": "classes/App-Twig-AppExtension.html#method_getFunctions"
+        },                {
+            "fqsen": "\\App\\Twig\\AppExtension\u003A\u003AgetComResChart\u0028\u0029",
+            "name": "getComResChart",
+            "summary": "",
+            "url": "classes/App-Twig-AppExtension.html#method_getComResChart"
+        },                {
+            "fqsen": "\\App\\Twig\\AppExtension\u003A\u003AgetStationDistChart\u0028\u0029",
+            "name": "getStationDistChart",
+            "summary": "",
+            "url": "classes/App-Twig-AppExtension.html#method_getStationDistChart"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1260,5 +1280,10 @@ Search.appendIndex(
             "name": "Repository",
             "summary": "",
             "url": "namespaces/app-repository.html"
+        },                {
+            "fqsen": "\\App\\Twig",
+            "name": "Twig",
+            "summary": "",
+            "url": "namespaces/app-twig.html"
         }            ]
 );

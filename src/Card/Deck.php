@@ -10,19 +10,30 @@ class Deck implements DeckInterface
     /**
      * Array holding card objects
      *
-     * @var array
+     * @var array<Card>
      */
     protected $deck = [];
 
     /**
      * array holding suits for deck
      *
-     * @var array
+     * @var array<string>
      */
     private $suits = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
+
+    /**
+     * Last drawn card
+     *
+     * @var array<Card>
+     */
     private $lastDrawn = [];
 
-    public function __construct($card)
+    /**
+     * Constructs a deck of cards
+     *
+     * @param Card $card
+     */
+    public function __construct(Card $card)
     {
         foreach ($this->suits as &$suit) {
             for ($i = 2; $i <= 14; $i++) {
@@ -33,9 +44,9 @@ class Deck implements DeckInterface
     }
 
     /**
-     * Gets card deck
+     * Gets deck of cards
      *
-     * @return array
+     * @return array<Card>
      */
     public function getDeck(): array
     {
@@ -45,7 +56,7 @@ class Deck implements DeckInterface
     /**
      * To get cards values and suits in array
      *
-     * @return array
+     * @return array<int,array<string,string>>
      */
     public function toString(): array
     {
@@ -76,7 +87,12 @@ class Deck implements DeckInterface
         return count($this->deck);
     }
 
-    public function getLastDrawn()
+    /**
+     * Returns last drawn cards
+     *
+     * @return array<Card>
+     */
+    public function getLastDrawn(): array
     {
         return $this->lastDrawn;
     }
@@ -85,7 +101,7 @@ class Deck implements DeckInterface
      * Draws given number of cards from deck
      *
      * @param integer $num
-     * @return array
+     * @return array<Card>
      */
     public function draw(int $num = 1)
     {

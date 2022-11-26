@@ -14,7 +14,7 @@ class Deck2 extends Deck
      * Constructs deck2
      * a deck with two jokers
      *
-     * @param $card
+     * @param Card $card
      */
     public function __construct($card)
     {

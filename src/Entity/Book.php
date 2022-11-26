@@ -38,12 +38,12 @@ class Book
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $language;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -67,7 +67,7 @@ class Book
         return $this;
     }
 
-    public function getISBN(): ?int
+    public function getISBN(): int
     {
         return $this->ISBN;
     }
@@ -103,19 +103,19 @@ class Book
         return $this;
     }
 
-    public function getImg(): ?string
+    public function getImg(): string
     {
         return $this->img;
     }
 
-    public function setImg(?string $img): self
+    public function setImg(string $img): self
     {
         $this->img = $img;
 
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): string
     {
         return $this->category;
     }
@@ -127,12 +127,12 @@ class Book
         return $this;
     }
 
-    public function getLanguage(): ?string
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
-    public function setLanguage(?string $language): self
+    public function setLanguage(string $language): self
     {
         $this->language = $language;
 

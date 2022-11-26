@@ -62,6 +62,7 @@ class CardController extends AbstractController
     public function deckShuffle(SessionInterface $session): Response
     {
         $title = 'Shuffle';
+        
         $session->set("deck", new Deck(Card::class));
         $deck = $session->get("deck");
         $deck->shuffle();
@@ -78,7 +79,7 @@ class CardController extends AbstractController
      * name="reset",
      * methods={"GET","POST", "HEAD"})
      */
-    public function resetSessionDeck(SessionInterface $session)
+    public function resetSessionDeck(SessionInterface $session): Response
     {
         $session->set("deck", new Deck(Card::class));
         return $this->redirectToRoute('card');

@@ -5,11 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
@@ -34,10 +32,9 @@ class ProjController extends AbstractController
     */
     public function index(ChartBuilderInterface $chartBuilder,
     YearRepository $yearRepository,
-    RegionRepository $regionRepository,
-    PopulationStationRepository $populationStationRepository,
-    CompletedResidencesRepository $completedResidencesRepository,
-    ResidenceStationRepository $residenceStationRepository): Response
+    PopulationStationRepository $popStationRepository,
+    CompletedResidencesRepository $compResRepository,
+    ResidenceStationRepository $resStationRepository): Response
     {
         $title = "Hållbar utveckling";
 
@@ -49,23 +46,23 @@ class ProjController extends AbstractController
 
         // Competed resideces multiple recidence houses
         
-        $completedResidences = $completedResidencesRepository->findBy(['type' => 'flerbostadshus']);
+        $completedResidences = $compResRepository->findBy(['type' => 'flerbostadshus']);
 
         // Competed resideces small houses
         
-        $completedResidencesSmall = $completedResidencesRepository->findBy(['type' => 'småhus']);
+        $compResSmall = $compResRepository->findBy(['type' => 'småhus']);
 
         // Population and distance to station (Urban area)
         
-        $popStationUrban = $populationStationRepository->findBy(['urban' => 'inom tätort']);
+        $popStationUrban = $popStationRepository->findBy(['urban' => 'inom tätort']);
 
         // Population and distence to station non-urban
         
-        $popStationNonUrban = $populationStationRepository->findBy(['urban' => 'utanför tätort']);
+        $popStationNonUrban = $popStationRepository->findBy(['urban' => 'utanför tätort']);
         
-        $resStationNew = $residenceStationRepository->findBy(['stock' => 'nytillkomna bostäder']);
+        $resStationNew = $resStationRepository->findBy(['stock' => 'nytillkomna bostäder']);
         
-        $resStationAll = $residenceStationRepository->findBy(['stock' => 'samtliga bostäder']);
+        $resStationAll = $resStationRepository->findBy(['stock' => 'samtliga bostäder']);
 
         // ['label' => 'Cookies eaten 🍪', 'data' => $years],
         // ['label' => 'Km walked 🏃‍♀️', 'data' => [10, 15, 4, 3, 25, 41, 25]],
@@ -73,7 +70,7 @@ class ProjController extends AbstractController
         return $this->render('proj/index.html.twig', [
             'title' => $title,
             'completedResidences' => $completedResidences,
-            'completedResidencesSmall' => $completedResidencesSmall,
+            'completedResidencesSmall' => $compResSmall,
             'popStationUrban' => $popStationUrban,
             'popStationNonUrban' => $popStationNonUrban,
             'resStationNew' => $resStationNew,
@@ -162,7 +159,6 @@ class ProjController extends AbstractController
      * @return void
      */
     public function resetCompletedResidences(
-        CompletedResidencesRepository $completedResidencesRepository,
         ManagerRegistry $doctrine
     ): void
     {
@@ -176,14 +172,14 @@ class ProjController extends AbstractController
         unset($connection);
 
         $batchSize = 20;
-        $i = 1;
-        $handle = @fopen($filename, "r");
+        $index = 1;
+        $handle = fopen($filename, "r");
         if ($handle) {
             while (($row = fgetcsv($handle, 4096, ";")) !== false) {
                 $data = new CompletedResidences();
                 // region;type;year;amount
-                if ($i == 1) {
-                    $i++;
+                if ($index == 1) {
+                    $index++;
                     continue;
                 }
                 $region = $this->getRegion($row[0], $doctrine);
@@ -196,11 +192,11 @@ class ProjController extends AbstractController
                 $data->setYear($year);
                 $data->setAmount($amount);
                 $entityManager->persist($data);
-                if (($i % $batchSize) === 0) {
+                if (($index % $batchSize) === 0) {
                     $entityManager->flush();
                     $entityManager->clear(); // Detaches all objects from Doctrine!
                 }
-                $i++;
+                $index++;
             }
             if (!feof($handle)) {
                 echo "Error: unexpected fgets() fail\n";
@@ -215,12 +211,10 @@ class ProjController extends AbstractController
     /**
      * Function to reset table Population Station
      *
-     * @param PopulationStationRepository $populationStationRepository
      * @param ManagerRegistry $doctrine
      * @return void
      */
     public function resetPopulationStation(
-        PopulationStationRepository $populationStationRepository,
         ManagerRegistry $doctrine
     ): void
     {
@@ -234,14 +228,14 @@ class ProjController extends AbstractController
         unset($connection);
 
         $batchSize = 20;
-        $i = 1;
-        $handle = @fopen($filename, "r");
+        $index = 1;
+        $handle = fopen($filename, "r");
         if ($handle) {
             while (($row = fgetcsv($handle, 4096, ";")) !== false) {
                 $data = new PopulationStation();
                 // region;distance;urban;year;amount
-                if ($i == 1) {
-                    $i++;
+                if ($index == 1) {
+                    $index++;
                     continue;
                 }
                 $region = $this->getRegion($row[0], $doctrine);
@@ -256,11 +250,11 @@ class ProjController extends AbstractController
                 $data->setYear($year);
                 $data->setAmount($amount);
                 $entityManager->persist($data);
-                if (($i % $batchSize) === 0) {
+                if (($index % $batchSize) === 0) {
                     $entityManager->flush();
                     $entityManager->clear(); // Detaches all objects from Doctrine!
                 }
-                $i++;
+                $index++;
             }
             if (!feof($handle)) {
                 echo "Error: unexpected fgets() fail\n";
@@ -275,12 +269,10 @@ class ProjController extends AbstractController
     /**
      * Function to reset table Residence station
      *
-     * @param ResidenceStationRepository $residenceStationRepository
      * @param ManagerRegistry $doctrine
      * @return void
      */
     public function resetResidenceStation(
-        ResidenceStationRepository $residenceStationRepository,
         ManagerRegistry $doctrine
     ): void
     {
@@ -294,14 +286,14 @@ class ProjController extends AbstractController
         unset($connection);
 
         $batchSize = 20;
-        $i = 1;
-        $handle = @fopen($filename, "r");
+        $index = 1;
+        $handle = fopen($filename, "r");
         if ($handle) {
             while (($row = fgetcsv($handle, 4096, ";")) !== false) {
                 $data = new ResidenceStation();
                 // region;distance;stock;year;amount
-                if ($i == 1) {
-                    $i++;
+                if ($index == 1) {
+                    $index++;
                     continue;
                 }
                 $region = $this->getRegion($row[0], $doctrine);
@@ -316,11 +308,11 @@ class ProjController extends AbstractController
                 $data->setYear($year);
                 $data->setAmount($amount);
                 $entityManager->persist($data);
-                if (($i % $batchSize) === 0) {
+                if (($index % $batchSize) === 0) {
                     $entityManager->flush();
                     $entityManager->clear(); // Detaches all objects from Doctrine!
                 }
-                $i++;
+                $index++;
             }
             if (!feof($handle)) {
                 echo "Error: unexpected fgets() fail\n";
@@ -337,11 +329,6 @@ class ProjController extends AbstractController
     *      methods={"GET"})
     */
     public function reset(
-        CompletedResidencesRepository $completedResidencesRepository,
-        PopulationStationRepository $populationStationRepository,
-        ResidenceStationRepository $residenceStationRepository,
-        YearRepository $yearRepository,
-        RegionRepository $regionRepository,
         ManagerRegistry $doctrine
     ): Response
     {
@@ -373,9 +360,9 @@ class ProjController extends AbstractController
         $connection = $entityManager->getConnection();
         $connection->exec('ALTER TABLE region AUTO_INCREMENT = 1;');
         unset($entityManager);
-        $this->resetCompletedResidences($completedResidencesRepository, $doctrine);
-        $this->resetPopulationStation($populationStationRepository, $doctrine);
-        $this->resetResidenceStation($residenceStationRepository, $doctrine);
+        $this->resetCompletedResidences($doctrine);
+        $this->resetPopulationStation($doctrine);
+        $this->resetResidenceStation($doctrine);
         return $this->redirectToRoute('proj about');
     }
 }

@@ -42,13 +42,10 @@ class Game
      *
      * @param DeckInterface $deck
      * @param PlayerInterface $player
-     * @param CardInterface $card
+     * @param PlayerInterface $bank
      */
     public function __construct(DeckInterface $deck, PlayerInterface $player, PlayerInterface $bank)
     {
-        // $this->player = new $player();
-        // $this->bank = new $player();
-        // $this->deck = new $deck($card);
 
         $this->player = $player;
         $this->bank = $bank;

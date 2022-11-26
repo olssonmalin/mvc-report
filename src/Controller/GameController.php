@@ -82,7 +82,6 @@ class GameController extends AbstractController
         $title = '21';
         $game = $session->get("game");
 
-
         $game->stand();
 
         $playerhand = $game->getPlayer()->getHand();
@@ -90,11 +89,14 @@ class GameController extends AbstractController
         $playerScore = $game->getPlayer()->getScore();
         $bankScore = $game->getBank()->getScore();
 
+        $msgType = 'warning';
+        $msg = "Sorry you lost :(";
         if ($game->playerWon()) {
-            $this->addFlash("success", "Congratulations! You won!");
-        } else {
-            $this->addFlash("warning", "Sorry you lost :(");
-        }
+            // $this->addFlash("success", "Congratulations! You won!");
+            $msgType = "success";
+            $msg = "Congratulations! You won!";
+        } 
+        $this->addFlash($msgType, $msg);
 
         return $this->render('game/stand.html.twig', [
             'title' => $title,

@@ -25,8 +25,8 @@ class AppExtension extends AbstractExtension
          '#0096C7', '#00B4D8', '#48CAE4', '#ADE8F4', '#006400', '#007200', '#008000', '#38B000', '#70E000', '#9EF01A'];
         
         // $completedResidences = $completedResidencesRepository->findBy(['type' => 'flerbostadshus']);
-        $datasets;
-        $dataRegion;
+        $datasets = [];
+        $dataRegion = [];
         foreach ($objects as $crObject) {
             // Create an array with region => amount[]
             $dataRegion[$crObject->getRegion()->getName()][] = $crObject->getAmount();
@@ -58,15 +58,15 @@ class AppExtension extends AbstractExtension
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
         $colors = ['#15616d', '#001524', '#ff7d00', '#78290f'];
         
-        $datasets;
-        $dataRegion;
+        $datasets = [];
+        $dataRegion = [];
         // Stack year
         // Dataset meters
         // Labels region
         foreach ($objects as $psObject) {
             $dataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
         }
-        $regions;
+        $regions = [];
         $dataMeters;
         foreach ($dataRegion as $name => $data) {
             $regions[] = $name;

@@ -65,7 +65,7 @@ class BookController extends AbstractController
         $book->setImg($img);
         $book->setAuthor($author);
         $book->setReleaseDate($release);
-        $book->setISBN($isbn);
+        $book->setISBN(intval($isbn));
         $book->setCategory($category);
         $book->setLanguage($language);
     }
@@ -94,14 +94,6 @@ class BookController extends AbstractController
             $request->request->get("category"),
             $request->request->get("language")
         );
-        // $book->setTitle($request->request->get("title"));
-        // $book->setDescription($request->request->get("description"));
-        // $book->setImg($request->request->get("img"));
-        // $book->setAuthor($request->request->get("author"));
-        // $book->setReleaseDate($request->request->get("release"));
-        // $book->setISBN($request->request->get("isbn"));
-        // $book->setCategory($request->request->get("category"));
-        // $book->setLanguage($request->request->get("language"));
 
         $entityManager->persist($book);
 
@@ -130,14 +122,14 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/book/show/{id}", defaults={"id" = 1}, name="book_by_id", methods={"GET"})
+     * @Route("/book/show/{bookId}", defaults={"bookId" = 1}, name="book_by_id", methods={"GET"})
      */
     public function showBook(
         BookRepository $bookRepository,
-        int $id
+        int $bookId
     ): Response {
         $book = $bookRepository
-            ->find($id);
+            ->find($bookId);
 
 
         // return $this->json($book);
@@ -147,17 +139,17 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/book/edit/{id}",
-     *      defaults={"id" = 1},
+     * @Route("/book/edit/{bookId}",
+     *      defaults={"bookId" = 1},
      *      name="edit-book",
      *      methods={"GET"})
      */
     public function editBook(
         BookRepository $bookRepository,
-        int $id
+        int $bookId
     ): Response {
         $book = $bookRepository
-            ->find($id);
+            ->find($bookId);
 
         $title = "Update";
 
@@ -170,7 +162,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/book/edit/{id}", defaults={"id" = 1}, name="edit-book-process",
+     * @Route("/book/edit/{bookId}", defaults={"bookId" = 1}, name="edit-book-process",
      *      methods={"POST"})
      */
     public function editBookProcess(
@@ -199,34 +191,25 @@ class BookController extends AbstractController
             $request->request->get("language")
         );
 
-        // $book->setTitle($request->request->get("title"));
-        // $book->setDescription($request->request->get("description"));
-        // $book->setImg($request->request->get("img"));
-        // $book->setAuthor($request->request->get("author"));
-        // $book->setReleaseDate($request->request->get("release"));
-        // $book->setISBN($request->request->get("isbn"));
-        // $book->setCategory($request->request->get("category"));
-        // $book->setLanguage($request->request->get("language"));
-
         $entityManager->flush();
 
         // return $this->json($book);
-        return $this->redirectToRoute('book_by_id', ["id" => $request->request->get("id")]);
+        return $this->redirectToRoute('book_by_id', ["bookId" => $request->request->get("id")]);
     }
 
     /**
-     * @Route("/book/delete/{id}", name="delete-book")
+     * @Route("/book/delete/{bookId}", name="delete-book")
      */
     public function deleteBook(
         ManagerRegistry $doctrine,
-        int $id
+        int $bookId
     ): Response {
         $entityManager = $doctrine->getManager();
-        $book = $entityManager->getRepository(Book::class)->find($id);
+        $book = $entityManager->getRepository(Book::class)->find($bookId);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id ' . $id
+                'No book found for id ' . $bookId
             );
         }
 

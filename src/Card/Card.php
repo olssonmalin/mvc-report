@@ -26,7 +26,7 @@ class Card implements CardInterface
    /**
     * Covered cards as string
     *
-    *@var array
+    *@var array<int,string>
     */
     private $stringCards = [
         0 => "JOKER",

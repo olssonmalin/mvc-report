@@ -14,7 +14,7 @@
     <div class="book-item-container">
     {% if (books != null)%}
     {% for book in books %}
-        <a href="{{ path("book_by_id", {'id': book.id }) }}">
+        <a href="{{ path("book_by_id", {'bookId': book.id }) }}">
             <div class="book-item">
                 <p>{{ book.title }}</p>
                 <p>{{ book.author }}</p>

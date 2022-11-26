@@ -13,7 +13,7 @@ class Player implements PlayerInterface
     /**
      * Holds hand of cards
      *
-     * @var array
+     * @var array<Card>
      */
     private $hand = [];
 
@@ -34,7 +34,7 @@ class Player implements PlayerInterface
     /**
      * Gets players current hand of cards
      *
-     * @return array
+     * @return array<Card>
      */
     public function getHand(): array
     {
@@ -44,7 +44,7 @@ class Player implements PlayerInterface
     /**
      * Adds card(s) to players hand
      *
-     * @param Card $cards
+     * @param array<Card> $cards
      * @return void
      */
     public function addCard(array $cards = [new Card("joker", 0)]): void
