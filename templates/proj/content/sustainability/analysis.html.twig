@@ -40,9 +40,9 @@ För de län med mindre befolkningsmängd är färdigställda bostäder mer jäm
 
 
 {% apply markdown_to_html %}
-- utanför tätort är befolkningsgruppen som har hållplats inom 2000m störst i de flesta län
-- västra götaland har högs befolkning utanför tätort
-- befolkning som bor utanför tätort i skånes län och har hållplats inom 2000m är nästan dubbelt så många som de som har hållplats inom 1000m
+- Utanför tätort är befolkningsgruppen som har hållplats inom 2000m störst i de flesta län
+- Västra götaland har högs befolkning utanför tätort
+- Befolkning som bor utanför tätort i skånes län och har hållplats inom 2000m är nästan dubbelt så många som de som har hållplats inom 1000m
 {% endapply %}
 
 <h4>Bostäders avstånd till hållplats (nytillkomna bostäder)</h4>
@@ -51,15 +51,12 @@ För de län med mindre befolkningsmängd är färdigställda bostäder mer jäm
 
 
 {% apply markdown_to_html %}
-- majoriteten av nytillkomna bostäder i samtliga län ligger inom 400m till en hållplats
-{% endapply %}
-
+- Majoriteten av nytillkomna bostäder i samtliga län ligger inom 400m till en hållplats
+  
 <h4>Bostäders avstånd till hållplats (Samtliga bostäder)</h4>
 
 {{ render_chart(getStationDistChart(resStationAll, chartBuilder)) }}
 
 
-{% apply markdown_to_html %}
-- inget som sticker ut???
 {% endapply %}
 
