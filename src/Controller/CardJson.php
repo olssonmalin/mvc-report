@@ -16,6 +16,11 @@ use App\Card\DeckTooSmallException;
 
 class CardJson extends AbstractController
 {
+    /**
+     * Deck of cards
+     *
+     * @var Deck|Deck2
+     */
     private $deck;
 
     /**
@@ -29,11 +34,12 @@ class CardJson extends AbstractController
             'deck' => $this->deck->toString()
         ];
 
-        $response = new Response();
-        $response->setContent(json_encode($data));
-        $response->headers->set('Content-Type', 'application/json');
+        // $response = new Response();
+        // $response->setContent(json_encode($data));
+        // $response->headers->set('Content-Type', 'application/json');
 
-        return $response;
+        // return $response;
+        return $this->json($data);
     }
 
      /**
@@ -50,10 +56,12 @@ class CardJson extends AbstractController
             'deck' => $deck->toString()
         ];
 
-        $response = new Response();
-        $response->setContent(json_encode($data));
-        $response->headers->set('Content-Type', 'application/json');
+        // $response = new Response();
+        // $response->setContent(json_encode($data));
+        // $response->headers->set('Content-Type', 'application/json');
 
-        return $response;
+        // return $response;
+        return $this->json($data);
+        
     }
 }

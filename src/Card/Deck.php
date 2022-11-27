@@ -31,9 +31,9 @@ class Deck implements DeckInterface
     /**
      * Constructs a deck of cards
      *
-     * @param Card $card
+     * @param string $card
      */
-    public function __construct(Card $card)
+    public function __construct(string $card)
     {
         foreach ($this->suits as &$suit) {
             for ($i = 2; $i <= 14; $i++) {

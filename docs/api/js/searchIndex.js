@@ -258,7 +258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CardJson\u003A\u003A\u0024deck",
             "name": "deck",
-            "summary": "",
+            "summary": "Deck\u0020of\u0020cards",
             "url": "classes/App-Controller-CardJson.html#property_deck"
         },                {
             "fqsen": "\\App\\Controller\\Deal",
@@ -1238,17 +1238,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Twig\\AppExtension\u003A\u003AgetFunctions\u0028\u0029",
             "name": "getFunctions",
-            "summary": "",
+            "summary": "Gets\u0020Twig\u0020functions",
             "url": "classes/App-Twig-AppExtension.html#method_getFunctions"
         },                {
             "fqsen": "\\App\\Twig\\AppExtension\u003A\u003AgetComResChart\u0028\u0029",
             "name": "getComResChart",
-            "summary": "",
+            "summary": "Builds\u0020line\u0020chart\u0020for\u0020CompletedResidences\u0020objects",
             "url": "classes/App-Twig-AppExtension.html#method_getComResChart"
         },                {
             "fqsen": "\\App\\Twig\\AppExtension\u003A\u003AgetStationDistChart\u0028\u0029",
             "name": "getStationDistChart",
-            "summary": "",
+            "summary": "Builds\u0020barcharts\u0020for\u0020population\u0020and\u0020residence\u0020station\u0020objects",
             "url": "classes/App-Twig-AppExtension.html#method_getStationDistChart"
         },                {
             "fqsen": "\\",

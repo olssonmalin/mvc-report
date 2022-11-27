@@ -38,6 +38,7 @@ class Report extends AbstractController
     {
         $title = 'Redovisningstexter';
         $path    = './../templates/texts/';
+        /* @phpstan-ignore-next-line */
         $files = array_diff(scandir($path), array('.', '..'));
 
         return $this->render('report.html.twig', [

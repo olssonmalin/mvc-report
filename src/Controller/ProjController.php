@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
@@ -106,7 +107,7 @@ class ProjController extends AbstractController
     public function getYear(
         string $year,
         ManagerRegistry $doctrine
-        ): Year
+        ): ?Year
     {
         $entityManager = $doctrine->getManager();
         // check exists
@@ -134,7 +135,7 @@ class ProjController extends AbstractController
     public function getRegion(
         string $region,
         ManagerRegistry $doctrine
-    ): Region
+    ): ?Region
     {
         $entityManager = $doctrine->getManager();
         // check exists
@@ -154,7 +155,6 @@ class ProjController extends AbstractController
     /**
      * Function to reset table Completed Residences
      *
-     * @param CompletedResidencesRepository $completedResidencesRepository
      * @param ManagerRegistry $doctrine
      * @return void
      */
@@ -167,6 +167,7 @@ class ProjController extends AbstractController
         $filename = "csv/fardigstallda-lagenheter.csv";
 
         // Reset Auto increment
+        /* @phpstan-ignore-next-line */
         $connection = $entityManager->getConnection();
         $connection->exec('ALTER TABLE completed_residences AUTO_INCREMENT = 1;');
         unset($connection);
@@ -223,6 +224,7 @@ class ProjController extends AbstractController
         $filename = "csv/befolkning-hallplats.csv";
 
         // Reset Auto increment
+        /* @phpstan-ignore-next-line */
         $connection = $entityManager->getConnection();
         $connection->exec('ALTER TABLE population_station AUTO_INCREMENT = 1;');
         unset($connection);
@@ -281,6 +283,7 @@ class ProjController extends AbstractController
         $filename = "csv/kollektivnara-bostader.csv";
 
         // Reset Auto increment
+        /* @phpstan-ignore-next-line */
         $connection = $entityManager->getConnection();
         $connection->exec('ALTER TABLE residence_station AUTO_INCREMENT = 1;');
         unset($connection);
@@ -327,6 +330,10 @@ class ProjController extends AbstractController
     * @Route("/proj/reset",
     *      name="proj reset",
     *      methods={"GET"})
+    *
+    * @param ManagerRegistry $doctrine
+    * @return Response
+    *
     */
     public function reset(
         ManagerRegistry $doctrine
@@ -335,28 +342,34 @@ class ProjController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         // Delete from DB Completed Residences
+        /* @phpstan-ignore-next-line */
         $qCR = $entityManager->createQuery('delete from App\Entity\CompletedResidences');
         $qCR->execute();
         unset($qCR);
 
         // Delete from DB Population Station
+        /* @phpstan-ignore-next-line */
         $qPS = $entityManager->createQuery('delete from App\Entity\PopulationStation');
         $qPS->execute();
         unset($qPS);
 
         // Delete from DB Residence Station
+        /* @phpstan-ignore-next-line */
         $qRS = $entityManager->createQuery('delete from App\Entity\ResidenceStation');
         $qRS->execute();
         unset($qRS);
 
+        /* @phpstan-ignore-next-line */
         $qYear = $entityManager->createQuery('delete from App\Entity\Year');
         $qYear->execute();
         unset($qYear);
 
+        /* @phpstan-ignore-next-line */
         $qRegion = $entityManager->createQuery('delete from App\Entity\Region');
         $qRegion->execute();
         unset($qRegion);
 
+        /* @phpstan-ignore-next-line */
         $connection = $entityManager->getConnection();
         $connection->exec('ALTER TABLE region AUTO_INCREMENT = 1;');
         unset($entityManager);

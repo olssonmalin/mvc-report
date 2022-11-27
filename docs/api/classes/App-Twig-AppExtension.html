@@ -130,7 +130,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Twig/AppExtension.php"><a href="files/src-twig-appextension.html"><abbr title="src/Twig/AppExtension.php">AppExtension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -155,21 +155,21 @@
     <span>
                                 &nbsp;: <abbr title="\Symfony\UX\Chartjs\Model\Chart">Chart</abbr>    </span>
 </dt>
-<dd></dd>
+<dd>Builds line chart for CompletedResidences objects</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Twig-AppExtension.html#method_getFunctions">getFunctions()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, <abbr title="\Twig\TwigFunction">TwigFunction</abbr>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Gets Twig functions</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Twig-AppExtension.html#method_getStationDistChart">getStationDistChart()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\UX\Chartjs\Model\Chart">Chart</abbr>    </span>
 </dt>
-<dd></dd>
+<dd>Builds barcharts for population and residence station objects</dd>
 
         </dl>
 
@@ -197,42 +197,39 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Twig/AppExtension.php"><a href="files/src-twig-appextension.html"><abbr title="src/Twig/AppExtension.php">AppExtension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Builds line chart for CompletedResidences objects</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getComResChart</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$objects</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$years</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\UX\Chartjs\Builder\ChartBuilderInterface">ChartBuilderInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chartBuilder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\UX\Chartjs\Model\Chart">Chart</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getComResChart</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Entity-CompletedResidences.html"><abbr title="\App\Entity\CompletedResidences">CompletedResidences</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$objects</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Entity-Year.html"><abbr title="\App\Entity\Year">Year</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$years</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\UX\Chartjs\Builder\ChartBuilderInterface">ChartBuilderInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chartBuilder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\UX\Chartjs\Model\Chart">Chart</abbr></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$objects</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Entity-CompletedResidences.html"><abbr title="\App\Entity\CompletedResidences">CompletedResidences</abbr></a>&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$years</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Entity-Year.html"><abbr title="\App\Entity\Year">Year</abbr></a>&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$chartBuilder</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\UX\Chartjs\Builder\ChartBuilderInterface">ChartBuilderInterface</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
@@ -257,22 +254,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Twig/AppExtension.php"><a href="files/src-twig-appextension.html"><abbr title="src/Twig/AppExtension.php">AppExtension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Gets Twig functions</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getFunctions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getFunctions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Twig\TwigFunction">TwigFunction</abbr>&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Twig\TwigFunction">TwigFunction</abbr>&gt;</span>
             &mdash;
         
     
@@ -290,34 +287,32 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Twig/AppExtension.php"><a href="files/src-twig-appextension.html"><abbr title="src/Twig/AppExtension.php">AppExtension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Builds barcharts for population and residence station objects</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getStationDistChart</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$objects</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\UX\Chartjs\Builder\ChartBuilderInterface">ChartBuilderInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chartBuilder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\UX\Chartjs\Model\Chart">Chart</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getStationDistChart</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, \App\Entity\PopulationStation|\App\Entity\ResidenceStation&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$objects</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\UX\Chartjs\Builder\ChartBuilderInterface">ChartBuilderInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chartBuilder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\UX\Chartjs\Model\Chart">Chart</abbr></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$objects</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, \App\Entity\PopulationStation|\App\Entity\ResidenceStation&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$chartBuilder</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\UX\Chartjs\Builder\ChartBuilderInterface">ChartBuilderInterface</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 

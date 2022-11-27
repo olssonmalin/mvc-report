@@ -7,9 +7,25 @@ use Twig\TwigFunction;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
+use App\Repository\CompletedResidencesRepository;
+use App\Entity\CompletedResidences;
+use App\Repository\PopulationStationRepository;
+use App\Entity\PopulationStation;
+use App\Repository\ResidenceStationRepository;
+use App\Entity\ResidenceStation;
+use App\Repository\RegionRepository;
+use App\Repository\YearRepository;
+use App\Entity\Year;
+use App\Entity\Region;
+
 class AppExtension extends AbstractExtension
 {
-    public function getFunctions()
+    /**
+     * Gets Twig functions
+     *
+     * @return array<TwigFunction>
+     */
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('getComResChart', [$this, 'getComResChart']),
@@ -17,6 +33,14 @@ class AppExtension extends AbstractExtension
         ];
     }
 
+    /**
+     * Builds line chart for CompletedResidences objects
+     *
+     * @param array<CompletedResidences> $objects 
+     * @param array<Year> $years
+     * @param ChartBuilderInterface $chartBuilder
+     * @return Chart
+     */
     public function getComResChart(array $objects, array $years, ChartBuilderInterface $chartBuilder): Chart
     {
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
@@ -52,6 +76,13 @@ class AppExtension extends AbstractExtension
         return $chart;
     }
 
+    /**
+     * Builds barcharts for population and residence station objects
+     *
+     * @param array<PopulationStation|ResidenceStation> $objects
+     * @param ChartBuilderInterface $chartBuilder
+     * @return Chart
+     */
     public function getStationDistChart(array $objects, ChartBuilderInterface $chartBuilder): Chart
     {
         // Residences and distance to station newly built
@@ -67,7 +98,7 @@ class AppExtension extends AbstractExtension
             $dataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
         }
         $regions = [];
-        $dataMeters;
+        $dataMeters = [];
         foreach ($dataRegion as $name => $data) {
             $regions[] = $name;
             foreach ($data as $year => $data) {

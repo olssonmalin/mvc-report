@@ -39,26 +39,26 @@ class BookController extends AbstractController
      * Set book attributes for edit/add book
      *
      * @param Book $book
-     * @param string $title
-     * @param string $description
-     * @param string $img
-     * @param string $author
-     * @param string $release
-     * @param string $isbn
-     * @param string $category
-     * @param string $language
+     * @param mixed $title
+     * @param mixed $description
+     * @param mixed $img
+     * @param mixed $author
+     * @param mixed $release
+     * @param mixed $isbn
+     * @param mixed $category
+     * @param mixed $language
      * @return void
      */
     public function setBookAttr(
         Book $book, 
-        string $title,
-        string $description,
-        string $img,
-        string $author,
-        string $release,
-        string $isbn,
-        string $category,
-        string $language
+        mixed $title,
+        mixed $description,
+        mixed $img,
+        mixed $author,
+        mixed $release,
+        mixed $isbn,
+        mixed $category,
+        mixed $language
     ): void {
         $book->setTitle($title);
         $book->setDescription($description);
