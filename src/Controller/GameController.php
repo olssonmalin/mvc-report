@@ -45,7 +45,7 @@ class GameController extends AbstractController
      * @Route("/game/start", name="startGame", methods={"GET", "HEAD"})
      */
     public function startGame(SessionInterface $session): Response
-    {   
+    {
         $deck = new Deck(Card::class);
         $player = new Player();
         $bank = new Player();
@@ -95,7 +95,7 @@ class GameController extends AbstractController
             // $this->addFlash("success", "Congratulations! You won!");
             $msgType = "success";
             $msg = "Congratulations! You won!";
-        } 
+        }
         $this->addFlash($msgType, $msg);
 
         return $this->render('game/stand.html.twig', [
@@ -111,12 +111,12 @@ class GameController extends AbstractController
      * @Route("/game/reset", name="resetGame", methods={"GET", "HEAD"})
      */
     public function resetGame(SessionInterface $session): Response
-    {   
+    {
         $deck = new Deck(Card::class);
         $player = new Player();
         $bank = new Player();
 
-        $session->set("game", new Game($deck , $player, $bank));
+        $session->set("game", new Game($deck, $player, $bank));
         return $this->redirectToRoute('startGame');
     }
 

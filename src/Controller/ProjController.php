@@ -11,7 +11,6 @@ use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
-
 use App\Repository\CompletedResidencesRepository;
 use App\Entity\CompletedResidences;
 use App\Repository\PopulationStationRepository;
@@ -23,7 +22,6 @@ use App\Repository\YearRepository;
 use App\Entity\Year;
 use App\Entity\Region;
 
-
 class ProjController extends AbstractController
 {
     /**
@@ -31,12 +29,13 @@ class ProjController extends AbstractController
     *      name="proj index",
     *      methods={"GET"})
     */
-    public function index(ChartBuilderInterface $chartBuilder,
-    YearRepository $yearRepository,
-    PopulationStationRepository $popStationRepository,
-    CompletedResidencesRepository $compResRepository,
-    ResidenceStationRepository $resStationRepository): Response
-    {
+    public function index(
+        ChartBuilderInterface $chartBuilder,
+        YearRepository $yearRepository,
+        PopulationStationRepository $popStationRepository,
+        CompletedResidencesRepository $compResRepository,
+        ResidenceStationRepository $resStationRepository
+    ): Response {
         $title = "Hållbar utveckling";
 
 
@@ -46,23 +45,23 @@ class ProjController extends AbstractController
         }
 
         // Competed resideces multiple recidence houses
-        
+
         $completedResidences = $compResRepository->findBy(['type' => 'flerbostadshus']);
 
         // Competed resideces small houses
-        
+
         $compResSmall = $compResRepository->findBy(['type' => 'småhus']);
 
         // Population and distance to station (Urban area)
-        
+
         $popStationUrban = $popStationRepository->findBy(['urban' => 'inom tätort']);
 
         // Population and distence to station non-urban
-        
+
         $popStationNonUrban = $popStationRepository->findBy(['urban' => 'utanför tätort']);
-        
+
         $resStationNew = $resStationRepository->findBy(['stock' => 'nytillkomna bostäder']);
-        
+
         $resStationAll = $resStationRepository->findBy(['stock' => 'samtliga bostäder']);
 
         // ['label' => 'Cookies eaten 🍪', 'data' => $years],
@@ -107,15 +106,14 @@ class ProjController extends AbstractController
     public function getYear(
         string $year,
         ManagerRegistry $doctrine
-        ): ?Year
-    {
+    ): ?Year {
         $entityManager = $doctrine->getManager();
         // check exists
         $yearObject = $doctrine->getRepository(Year::class)->find(intval($year));
         if ($yearObject) {
             return $yearObject;
         }
-        $newYear = new Year;
+        $newYear = new Year();
         $newYear->setId(intval($year));
         $entityManager->persist($newYear);
         $entityManager->flush();
@@ -135,15 +133,14 @@ class ProjController extends AbstractController
     public function getRegion(
         string $region,
         ManagerRegistry $doctrine
-    ): ?Region
-    {
+    ): ?Region {
         $entityManager = $doctrine->getManager();
         // check exists
         $regionObject = $doctrine->getRepository(Region::class)->findOneBy(['name' => $region]);
         if ($regionObject) {
             return $regionObject;
         }
-        $newRegion = new Region;
+        $newRegion = new Region();
         $newRegion->setName($region);
         $entityManager->persist($newRegion);
         $entityManager->flush();
@@ -160,8 +157,7 @@ class ProjController extends AbstractController
      */
     public function resetCompletedResidences(
         ManagerRegistry $doctrine
-    ): void
-    {
+    ): void {
         $entityManager = $doctrine->getManager();
 
         $filename = "csv/fardigstallda-lagenheter.csv";
@@ -211,8 +207,7 @@ class ProjController extends AbstractController
      */
     public function resetPopulationStation(
         ManagerRegistry $doctrine
-    ): void
-    {
+    ): void {
         $entityManager = $doctrine->getManager();
 
         $filename = "csv/befolkning-hallplats.csv";
@@ -264,8 +259,7 @@ class ProjController extends AbstractController
      */
     public function resetResidenceStation(
         ManagerRegistry $doctrine
-    ): void
-    {
+    ): void {
         $entityManager = $doctrine->getManager();
 
         $filename = "csv/kollektivnara-bostader.csv";
@@ -319,8 +313,7 @@ class ProjController extends AbstractController
     */
     public function reset(
         ManagerRegistry $doctrine
-    ): Response
-    {
+    ): Response {
         $entityManager = $doctrine->getManager();
 
         // Delete from DB Completed Residences

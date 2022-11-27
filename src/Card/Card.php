@@ -76,9 +76,9 @@ class Card implements CardInterface
     public function asString(): string
     {
 
-       if (array_key_exists($this->value, $this->stringCards)) {
-           return $this->stringCards[$this->value];
-       }
+        if (array_key_exists($this->value, $this->stringCards)) {
+            return $this->stringCards[$this->value];
+        }
 
         return "$this->value";
     }

@@ -1,0 +1,57 @@
+{% apply markdown_to_html %}
+    ## Kmom10/Proj
+
+    ### Krav 1-3
+
+    #### Struktur och innehåll
+
+    Landingssidan för projektet är /proj och finns länkad i navigeringen för rapporten. I proj/about finns en om-sida för projektet. Här finns det även länkar till dokumentation av phpdocs, rapport från phpmetrics,
+    länk till github-repot och länk till scrutinizer.
+    
+    Jag har också skrivit lite om kodens kvaitet. För projektet var det lite svårare att hålla en bra kodkvalitet förförallt för kravet om reset. Jag hade svårt att hitta svar på hur detta skulle implementeras på bästa sätt och hittade mest komentarer om att det är en sorts implementation som vanligtvis inte ska göras med symfony och doctrine. 
+    Dock gick det att göra.
+
+    #### Databas med ORM
+
+    Min sida anvädner sig av databas med ORM för att lagra datan som visas i rapporten om hållbarhet. Utmaningen i projekete var att få till reset på ett bra sätt. Jag började med att kolla på hur jag kunde implementera detta med hjälp av sql-filer som fyller på datan från csv-filer med hjälp utan load local data infile.
+    Tyvärr hittade jag ingen lösning för detta men jag tror att det är möjligt. Jag kollade därför på sätt att bulk-inserta objekt med orm. Det är inget som rekomenderas enligt doctrines dokumentation men de gav tips på hur man skulle göra detta på bästa sätt för att det skulle funka. 
+    Tipset bygde på att skapa en loop som skapar och persistar ett objekt vid varje loop för att sedan vid en viss batch-size lägga in dessa med orm. De rekomenderade en batch-size på 20 så det använde jag mig av när jag la till min data. 
+    Eftersom datan jag har är väldigt omfattande tar detta rätt lång tid. 
+
+    #### Utseende och användbarhet
+
+    Jag har försökt mitt bästa med att göra denna projekt-sida se annorlunda ut från resten av rapportsidan. Jga använder mig av andra tysnitt och andra färger samt att navigeringen ser annorlunda ut. 
+    Eftersom jag har använt mig av Charts.js är diagrammen responsiva. Jag har använt mig av höga kontraster för att öka läsbarheten.
+
+    #### Kodstil
+
+    Min kod passerar phpcs utan anmärkningar. De små fel jag hade var enkla att fixa med hjälp av composer cbf som formatterar koden så den håller kodstilen.
+
+    #### Linters
+
+    Min kod passerar PHPmd och PHPstan utan anmärkningar. Jag behövde dock exkludera de filer som var genererade av doctrine för att kunna hålla nivån på PHPstan för resten av koden. 
+    Den kod jag har skrivit själv har blivit justerad enligt markeringarna jag fick av verktygen.
+
+    #### Enhetstestning & Kodtäckning
+
+    Jag har gjort enhetstestning för de klasser jag skrivit själv och når då upp till en nivå på 88%. Jag har exkluderat katalogerna Controller, Entity, Repository och filen Kernel.php.
+    Den kod som inte täcks av enhetstester är från en twig-extension jag skapade som genererar diagram med hjälp av charts.js.
+
+    ### Krav 6
+
+    Min databas har 5 tabeller i detta projekt. Tre av dessa har relationer till de andra två. Detta gjorde jag genom att sätta attribut som relationer när jag skapade entitys. 
+
+    ### Allmänt
+
+    Jag hade svårt att bli klar med detta projekt i tid pga flytt tillbaka till sverige från utlandet och sen började andra kurser och jag valde att fokusera på dom. Därför har detta projekt kännts lite jobbigt.
+    Det har inte varit så svårt rent tekniskt utan kännts mer lite för omfattande i form av text som ska skrivas. Jag upplever också att det är ett rätt spretigt projekt där huvuduppgiften inte kommer i fokus.
+    Jag hade hellre velat se ett huvudprojekt som var möjligt att utveckla i optionella krav istället för att ha ännu en uppgift som kretsar kring att skriva och resonera kring snygg kod eller att göra en inloggning som vi har haft i andra dbwebb-projekt.
+    I och med de hinder jag stötte på med att slutföra projektet tog det väldigt lång tid att göra. Fokus på kodkvalitet och användandet av linters och hjälpverktyg för att analysera kod tycker jag är jättebra men att skriva om samma ämne utifrån samma parametrar nästan 3 gånger tar bara mer tid och ger inte så mycket kunskap.
+
+    ### Kursen 
+
+    Kursen har varit helt okej. Lite väl spretigt och har inte upplevt att det funnits en röd tråd jämfört med andra kurser. 
+    Det kanske är bra att arbeta med PHP men jag hade nog hellre sett en MVC-kurs med python och Django istället eftersom det är ett MVC ramverk som används i större utstäckning där man kan använda ORM.
+    MVC tycker jag är ett jättebra fokus för en kurs men i och med upplägget på denna kurs hade jag nog inte rekomenderat den för andra. Kursen får 4/10 i betyg från mig.
+
+{% endapply %}

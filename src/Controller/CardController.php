@@ -62,7 +62,7 @@ class CardController extends AbstractController
     public function deckShuffle(SessionInterface $session): Response
     {
         $title = 'Shuffle';
-        
+
         $session->set("deck", new Deck(Card::class));
         $deck = $session->get("deck");
         $deck->shuffle();

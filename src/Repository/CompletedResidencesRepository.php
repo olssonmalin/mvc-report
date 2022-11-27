@@ -8,7 +8,6 @@ use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
-
 /**
  * @method CompletedResidences|null find($id, $lockMode = null, $lockVersion = null)
  * @method CompletedResidences|null findOneBy(array $criteria, array $orderBy = null)

@@ -2,19 +2,59 @@
 
 ### Slutprojekt i kursen MVC
 
-### Kodkvalitet
-{% endapply %}
-{% apply markdown_to_html %}
+I detta projekt har jag gjort en webbplats som visualiserar indikatorer över hållbar utveckling med fokus på de 17 globala målen och specifikt mål 11.
+Rapprten går att läsa under "Hållbar utveckling". Jag har samlat data från SCB. Datan har jag lagt in i en databas med hjälp av doctrime och ORM.
+
+Projektet inkluderar även kodkvalitet och för att jobba med det har jag använt mig av olika verktyg som genererar data och varnar för fel i kod som inte passar den standrard verktyget 
+vill att koden ska ha. Mer om kodkvaliteten för detta projekt finns att läsa längre ner på denna sida.
+
+### Dokumentation
+
+För att få en dokumentation över projektets kod, så som klasser, metoder och funktioner har jag använt mig av PHPDocs. Php-docs genererar en sida av docblock-kommentarer som har skrivits av mig som förklarar till en viss mån hur koden i t.ex en funktion används och returnerar.
+
+Mitt projekt finns tillgängligt på github. 
+
+Två rapporter över kodens kvalitet och komplexitet har gjorts med verktygen Scrutinizer och PHPMetrics. Länk till nämna sidor finns i listan nedanför.
 
 * [Dokumentation av phpdocs](/~mapy21/dbwebb-kurser/mvc/me/report/docs/api/classes/App-Controller-ProjController.html
 )
-
+  
 * [PhPmetrics-Rapport](/~mapy21/dbwebb-kurser/mvc/me/report/docs/metrics/index.html)
-
+  
 * [Github Repository](https://github.com/olssonmalin/mvc-report)
-
+  
 * [Scrutinizer-Rapport](https://scrutinizer-ci.com/g/olssonmalin/mvc-report/)
-
+  
 * Länk till "Cleancode"-artikel
+
+### Kodkvalitet
+
+Varktyg jag har använt för att jobba med kodkvaliteten är:
+
+* Scrutinizer
+* PHPMetrics 
+* PHPmd
+* PHPstan
+* PHPcpd
+  
+Scrutinizer och PHPMetrics har gett en bra översiktlig bild över koden med hjälp av olika faktorer använda i de båda verktygen.
+I Scrutinizer finns ett generellt betyg på kodens kvalitet med högsta betyg på 10. Här har jag lyckats få betyg 9.91. Klasser som finns i koden har alla generella betyget A.
+Så kollar man bara på Scrutinizer ser min kodkvalitet ut att vara väldigt hög.
+  
+Däremot finns en del anta indikatorer i PHPMetrics som kan visa lite andra siffror. Det gäller framförallt koplexiteten och coupling för klasserna ProjController, Region (Entity), Year (Entity) och AppExtension (Twig extension). 
+Alla dessa klasser har tillkommit för detta projekt och har dragit ner kodkvaliteten i helhet från hur rapportsidans kodkvaitet var innan jag började med projektet. 
+  
+Klasserna som har skapats i samband med projektet är mer komplexa och mer dependent på grund av vad de utför. I projContoller finns det är mycket hög komplexitet i samband med kallandet på routen reset. Reset resettar databasens tabeller 
+som är kopplade till projektet genom att tämma tabellerna för att sedan fylla på den med data igen. Datan fylls på genom att läsa CSV-filer med datan och skapa nya object med ORM som läggs in i databasen.
+  
+Det bygger på flera loopar och if-satser för att datan ska läggas till korrekt och att sidan inte ska krasha. Därför blir komplexiteten hög. Denna klass använder sig också av många andra klasser vilket gör att coupling blir väldigt hög.
+Detta kan leda till att koden blir svår att underhålla i längden.
+  
+För att hitta mindre fel och hålla mig till en kodstandard har jag analyserat min kod med hjälp av PHPmd och PHPstan.
+Många av felen jag fick i början handlade om functioner som saknade typer. Dessa fel var relativt enkla att fixa. Däremot fick jag upp fel där jag inte kunde hitta en lösning till. Dessa fel var i Repository och Entity-klasser som genereras av Doctrine.
+Därför kommenterade jag ut dessa rader så de inte analyserades av PHPmd.
+  
+För PHPstan valde jag att ha nivå 8 (9 är max) dvs har jag haft en strict linter. Även för PHPstan hade jag en del fel som berörde klasser som hade genererats och inte var skrivna av mig. 
+Jag skapade därför en config-fil för PHPstan där jag kunde exkludera dessa filer istället för att behöva sänka grader på strikthet för all kod.
 
 {% endapply %}

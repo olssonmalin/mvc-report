@@ -50,7 +50,7 @@ class BookController extends AbstractController
      * @return void
      */
     public function setBookAttr(
-        Book $book, 
+        Book $book,
         mixed $title,
         mixed $description,
         mixed $img,

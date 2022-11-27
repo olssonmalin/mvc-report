@@ -1,0 +1,27 @@
+{% apply markdown_to_html %}
+#### ORM
+
+De tabeller jag har i detta projekt är:
+* Year 
+* Region 
+* population_station
+* recidense_station
+* completed_resdences
+  
+##### Compleded_residences
+...Innehåller data om antalet färdigställda bostäder i Sveriges regioner vid olika årtal. Färdigställda bostäder kan antongen vara småhus eller flerbostadshus.
+
+##### Residence_station
+... Innehåller data om bostäder i Sveriges regioner och vilket avstånd de ligger till en hållplats. 
+Denna tabell har olika rader för nytillkomna bostäder och samtliga bostäder i en kommun.
+
+##### Population_station
+...Innehåller data om populationer i sveriges regioner baserat på vilket avstånd en hållplats finns i förhållande till populationens bostad. 
+Denna tabell har olika data för population som bor utanför eller inom tätort.
+
+  
+Population_station, Residence_station och Compleded_residences är alla kopplade till tabellerna year och region.
+På så sätt är det möjligt att hämta data från alla tre tabeller utifrån ett visst årtal eller region.
+
+Nedan finns ett ER-diagram som visualiserar databasens tabeller och deras relationer till varandra.
+{% endapply %}

@@ -4,7 +4,6 @@ namespace App\Card;
 
 use App\Card\Deck;
 
-
 /**
  * Showing off a standard class with methods and properties.
  */

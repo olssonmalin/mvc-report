@@ -7,4 +7,9 @@ Scrutinizer Badges:
 [![Build Status](https://scrutinizer-ci.com/g/olssonmalin/mvc-report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/olssonmalin/mvc-report/build-status/main)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/olssonmalin/mvc-report/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
 
+This repo is a project repo made in the course MVC at Bleking institute of technology.
+The project is built with php using symfony, twig and doctrine.
+
+Diagrams are generated using Charts.js with symfony UX and webpack.
+
 By Malin Olsson

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Card;
+
 use App\Card\CardInterface;
 use App\Card\DeckInterface;
 use App\Card\PlayerInterface;
-
 
 class Game
 {
@@ -98,7 +98,8 @@ class Game
      */
     public function playerWon(): bool
     {
-        return $this->bank->getScore() > 21 || $this->bank->getScore() < $this->player->getScore() && $this->player->getScore() <= 21;
+        return $this->bank->getScore() > 21 || $this->bank->getScore() < $this->player->getScore()
+            && $this->player->getScore() <= 21;
     }
 
     /**

@@ -4,7 +4,6 @@ namespace App\Card;
 
 interface PlayerInterface
 {
-
     /**
      * Gets players current hand of cards
      *

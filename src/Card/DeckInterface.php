@@ -3,7 +3,7 @@
 namespace App\Card;
 
 interface DeckInterface
-{   
+{
     /**
      * Get Deck of cards
      *

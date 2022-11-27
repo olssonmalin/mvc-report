@@ -62,6 +62,5 @@ class CardJson extends AbstractController
 
         // return $response;
         return $this->json($data);
-        
     }
 }

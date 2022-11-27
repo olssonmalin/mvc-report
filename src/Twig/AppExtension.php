@@ -1,4 +1,5 @@
 <?php
+
 // src/Twig/AppExtension.php
 namespace App\Twig;
 
@@ -6,7 +7,6 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
-
 use App\Repository\CompletedResidencesRepository;
 use App\Entity\CompletedResidences;
 use App\Repository\PopulationStationRepository;
@@ -36,7 +36,7 @@ class AppExtension extends AbstractExtension
     /**
      * Builds line chart for CompletedResidences objects
      *
-     * @param array<CompletedResidences> $objects 
+     * @param array<CompletedResidences> $objects
      * @param array<Year> $years
      * @param ChartBuilderInterface $chartBuilder
      * @return Chart
@@ -45,9 +45,9 @@ class AppExtension extends AbstractExtension
     {
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
         $colors = ['#004B23', '#03045E', '#590D22', '#800F2F', '#A4133C',
-         '#C9184A', '#FF4D6D', '#FF758F', '#FF8FA3', '#023E8A', '#0077B6', 
+         '#C9184A', '#FF4D6D', '#FF758F', '#FF8FA3', '#023E8A', '#0077B6',
          '#0096C7', '#00B4D8', '#48CAE4', '#ADE8F4', '#006400', '#007200', '#008000', '#38B000', '#70E000', '#9EF01A'];
-        
+
         // $completedResidences = $completedResidencesRepository->findBy(['type' => 'flerbostadshus']);
         $datasets = [];
         $dataRegion = [];
@@ -88,14 +88,15 @@ class AppExtension extends AbstractExtension
         // Residences and distance to station newly built
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
         $colors = ['#15616d', '#001524', '#ff7d00', '#78290f'];
-        
+
         $datasets = [];
         $dataRegion = [];
         // Stack year
         // Dataset meters
         // Labels region
         foreach ($objects as $psObject) {
-            $dataRegion[$psObject->getRegion()->getName()][$psObject->getYear()->getId()][$psObject->getDistance()] = $psObject->getAmount();
+            $dataRegion[$psObject->getRegion()->getName()][$psObject->getYear()
+                ->getId()][$psObject->getDistance()] = $psObject->getAmount();
         }
         $regions = [];
         $dataMeters = [];
@@ -112,7 +113,8 @@ class AppExtension extends AbstractExtension
         $colorIndex = 0;
         foreach ($dataMeters as $meters => $data) {
             foreach ($data as $year => $data) {
-                $datasets[] = ['label' => $meters . ' ' . $year, 'data' => $data, 'stack' => $year, 'backgroundColor' => $colors[$colorIndex]];
+                $datasets[] = ['label' => $meters . ' ' . $year, 'data' => $data,
+                    'stack' => $year, 'backgroundColor' => $colors[$colorIndex]];
             }
             $colorIndex++;
         }

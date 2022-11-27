@@ -1,8 +1,15 @@
 {% extends 'proj/base.html.twig' %}
 
 {% block body %}
-<h1>About</h1>
+<h1>Om Projektet</h1>
 {% include 'proj/content/about.html.twig' %}
 
 <a class="button" href="{{ path("proj reset") }}">Återställ databas</a>
+
+{% include 'proj/content/orm.html.twig' %}
+
+<img
+     src="../img/er.png"
+     alt="ER diagram över databasens tabeller">
+
 {% endblock %}
