@@ -166,12 +166,6 @@ class ProjController extends AbstractController
 
         $filename = "csv/fardigstallda-lagenheter.csv";
 
-        // Reset Auto increment
-        /* @phpstan-ignore-next-line */
-        $connection = $entityManager->getConnection();
-        $connection->exec('ALTER TABLE completed_residences AUTO_INCREMENT = 1;');
-        unset($connection);
-
         $batchSize = 20;
         $index = 1;
         $handle = fopen($filename, "r");
@@ -222,12 +216,6 @@ class ProjController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         $filename = "csv/befolkning-hallplats.csv";
-
-        // Reset Auto increment
-        /* @phpstan-ignore-next-line */
-        $connection = $entityManager->getConnection();
-        $connection->exec('ALTER TABLE population_station AUTO_INCREMENT = 1;');
-        unset($connection);
 
         $batchSize = 20;
         $index = 1;
@@ -281,12 +269,6 @@ class ProjController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         $filename = "csv/kollektivnara-bostader.csv";
-
-        // Reset Auto increment
-        /* @phpstan-ignore-next-line */
-        $connection = $entityManager->getConnection();
-        $connection->exec('ALTER TABLE residence_station AUTO_INCREMENT = 1;');
-        unset($connection);
 
         $batchSize = 20;
         $index = 1;
@@ -371,7 +353,9 @@ class ProjController extends AbstractController
 
         /* @phpstan-ignore-next-line */
         $connection = $entityManager->getConnection();
-        $connection->exec('ALTER TABLE region AUTO_INCREMENT = 1;');
+        $stm = 'UPDATE sqlite_sequence
+                SET seq = 1;';
+        $connection->exec($stm);
         unset($entityManager);
         $this->resetCompletedResidences($doctrine);
         $this->resetPopulationStation($doctrine);
