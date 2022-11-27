@@ -1,0 +1,7 @@
+parameters:
+	level: 8
+	checkGenericClassInNonGenericObjectType: false
+	paths:
+		- src
+	excludePaths:
+		- src/Entity

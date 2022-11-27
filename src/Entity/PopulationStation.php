@@ -47,7 +47,7 @@ class PopulationStation
         return $this;
     }
 
-    public function getYear(): ?Year
+    public function getYear(): Year
     {
         return $this->year;
     }
@@ -59,7 +59,7 @@ class PopulationStation
         return $this;
     }
 
-    public function getRegion(): ?Region
+    public function getRegion(): Region
     {
         return $this->region;
     }
